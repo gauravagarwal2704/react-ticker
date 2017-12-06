@@ -59,18 +59,8 @@ class App extends Component {
         </p>
         <button onClick={this.getTickerData}>Get Data</button>
         <br/>
-        <table>
-          <thead>
-            <th>Zebpay</th>
-            <th>Throughbit - BTC</th>
-            <th>Throughbit - ETH</th>
-          </thead>
-          <tbody>
-            <td>{this.state.zebpay.buy}</td>
-            <td>{this.state.tb_btc.buy_price}</td>
-            <td>{this.state.tb_eth.buy_price}</td>
-          </tbody>
-        </table>
+            <h3>Zebpay</h3>
+            <p>{this.state.zebpay.buy}</p>
       </div>
     );
   }
