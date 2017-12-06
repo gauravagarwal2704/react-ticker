@@ -23,17 +23,7 @@ class App extends Component {
           this.setState({
             zebpay : res.data 
           });
-
-        //   _.each(res.data, (t) => {
-        //   if (diff < 10) {
-        //     t.isChanged = true;
-        //   } else {
-        //     t.isChanged = false;
-        //   }
-        // });
         });
-
-        
 
        api_throughbit_btc.get()
         .then(res => {
@@ -51,12 +41,11 @@ class App extends Component {
           });
         });
 
-       api_unocoin.get()
-        .then(res => {
-          console.log("Unocoin",res);
-        });
+       // api_unocoin.get()
+       //  .then(res => {
+       //    console.log("Unocoin",res);
+       //  });
   }
-}
 
   render() {
     return (
