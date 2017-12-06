@@ -23,12 +23,12 @@ let api_throughbit_eth = axios.create({
     headers:{'Accept': 'application/json','Content-Type': 'application/json'}
 });
 
-let api_unocoin = axios.create({
-    baseURL: 'https://www.unocoin.com/trade?all',
-    timeout: 2000,
-    headers:{'Access-Control-Allow-Origin':'*','Accept': 'application/json','Content-Type': 'application/json'}
+// let api_unocoin = axios.create({
+//     baseURL: 'https://www.unocoin.com/trade?all',
+//     timeout: 2000,
+//     headers:{'Access-Control-Allow-Origin':'*','Accept': 'application/json','Content-Type': 'application/json'}
    
-});
+// });
 // Eventsource endpoint
 // const realtimeURL = `https://reactrealtime-6683.restdb.io/realtime?apikey=${apikey}`
 
