@@ -26,9 +26,7 @@ let api_throughbit_eth = axios.create({
 let api_unocoin = axios.create({
     baseURL: 'https://www.unocoin.com/trade?all',
     timeout: 2000,
-    headers:{'Access-Control-Allow-Origin':'*','Accept': 'application/json','Content-Type': 'application/json'}
+    headers:{'Access-Control-Allow-Origin':'*', 'Accept': 'application/json', 'Content-Type': 'application/json'}
 });
-// Eventsource endpoint
-// const realtimeURL = `https://reactrealtime-6683.restdb.io/realtime?apikey=${apikey}`
 
 export { api_zebpay, api_throughbit_btc, api_throughbit_eth, api_unocoin, update_delay };
