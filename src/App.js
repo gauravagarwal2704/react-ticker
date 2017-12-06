@@ -56,6 +56,7 @@ class App extends Component {
           console.log("Unocoin",res);
         });
   }
+}
 
   render() {
     return (
