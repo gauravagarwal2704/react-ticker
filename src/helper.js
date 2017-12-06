@@ -7,19 +7,19 @@ const update_delay = 3000; // millis
 // REST endpoint
 let api_zebpay = axios.create({
     baseURL: 'https://www.zebapi.com/api/v1/market/ticker/btc/inr',
-    timeout: 1500,
+    timeout: 2500,
     headers:{}
 });
 
 let api_throughbit_btc = axios.create({
     baseURL: 'https://www.throughbit.com/tbit_ci/index.php/cryptoprice/type/btc/inr',
-    timeout: 1500,
+    timeout: 2500,
     headers:{'Accept': 'application/json', 'Content-Type': 'application/json'}
 });
 
 let api_throughbit_eth = axios.create({
     baseURL: 'https://www.throughbit.com/tbit_ci/index.php/cryptoprice/type/eth/inr',
-    timeout: 1500,
+    timeout: 2500,
     headers:{'Accept': 'application/json','Content-Type': 'application/json'}
 });
 
