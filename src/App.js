@@ -60,7 +60,8 @@ class App extends Component {
         <button onClick={this.getTickerData}>Get Data</button>
         <br/>
             <h3>Zebpay</h3>
-            <p>{this.state.zebpay.buy}</p>
+            <p>Buy Price : {this.state.zebpay.buy}</p>
+            <p>Sell Price : {this.state.zebpay.sell}</p>
       </div>
     );
   }
