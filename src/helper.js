@@ -20,7 +20,7 @@ let api_throughbit_btc = axios.create({
 let api_throughbit_eth = axios.create({
     baseURL: 'https://www.throughbit.com/tbit_ci/index.php/cryptoprice/type/eth/inr',
     timeout: 2500,
-    headers:{'Access-Control-Allow-Origin':'*', 'Accept': 'application/json','Content-Type': 'application/json'}
+    headers:{}
 });
 
 let api_unocoin = axios.create({

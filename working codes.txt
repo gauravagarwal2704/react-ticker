@@ -1,0 +1,31 @@
+working codes
+ getTickerData = () => {
+      // api_zebpay.get()
+      //   .then(res => {
+      //     console.log("Zebpay", res);
+      //     this.setState({
+      //       zebpay : res.data 
+      //     });
+      //   });
+
+      //  api_throughbit_btc.get()
+      //   .then(res => {
+      //     console.log("ThroughBit-BTC", res);
+      //     this.setState({
+      //       tb_btc : res.data.data.price
+      //     });
+      //   });
+
+      //  api_throughbit_eth.get()
+      //   .then(res => {
+      //     console.log("ThroughBit-ETH", res);
+      //     this.setState({
+      //       tb_eth : res.data.data.price
+      //     });
+      //   });
+
+       // api_unocoin.get()
+       //  .then(res => {
+       //    console.log("Unocoin",res);
+       //  });
+  }
