@@ -6,7 +6,14 @@ import fetchJsonp from 'fetch-jsonp';
 import Header from './Components/Header';
 import PriceCardContainer from './Components/PriceCardContainer';
 // import { api_zebpay, api_throughbit_btc, api_throughbit_eth, api_unocoin, update_delay } from './helper.js';
-const theme = createMuiTheme();
+import { red, purple, blue, indigo, pink, lightBlue, cyan, teal, blueGrey } from 'material-ui/colors';
+
+const theme = createMuiTheme({
+palette: {
+  primary: blue
+},
+});
+
 
 class App extends Component {
 
@@ -16,6 +23,8 @@ class App extends Component {
       zebpay : {},
       tb_btc : {},
       tb_eth : {},
+      koinex:{},
+      bitbns:{},
       unocoin : 0,
       data:[]
     }
@@ -32,7 +41,7 @@ class App extends Component {
     return fetch('https://www.zebapi.com/api/v1/market/ticker/btc/inr')
       .then(response => response.json())
       .then(responseJson => {
-        console.log("Zebpay", responseJson);
+        // console.log("Zebpay", responseJson);
         if (responseJson){
           this.setState({
             zebpay : responseJson 
@@ -44,7 +53,7 @@ class App extends Component {
       .then(fetch('https://www.throughbit.com/tbit_ci/index.php/cryptoprice/type/eth/inr')
         .then(response => response.json())
         .then(responseJson => {
-           console.log("tb_eth", responseJson);
+           // console.log("tb_eth", responseJson);
           if (responseJson){
             this.setState({
               tb_eth : responseJson.data.price[0] 
@@ -56,7 +65,7 @@ class App extends Component {
       .then(fetch('https://www.throughbit.com/tbit_ci/index.php/cryptoprice/type/btc/inr')
         .then(response => response.json())
         .then(responseJson => {
-           console.log("tb_btc", responseJson);
+           // console.log("tb_btc", responseJson);
           if (responseJson){
             this.setState({
               tb_btc : responseJson.data.price[0] 
@@ -66,6 +75,53 @@ class App extends Component {
           }
           return responseJson;
         }))
+      .then(fetch('https://koinex.in/api/ticker')
+        .then(response => response.json())
+        .then(responseJson => {
+           // console.log("koinex", responseJson);
+          if (responseJson){
+            // this.setState({
+            //   koinex : responseJson.data.price[0] 
+            // });
+            // this.updateData();
+
+          }
+          return responseJson;
+        }))
+       // .then(fetchJsonp('https://bitbns.com/order/getTickerAll',{
+       //    'mode':'no-cors',
+       //    'timeout':3000,
+       //  })
+       //      .then(function(response) {
+       //        console.log('bitbns', response)
+       //        return response
+       //      }).then(function(json) {
+       //        console.log('parsed json', json)
+       //      }).catch(function(ex) {
+       //        console.log('parsing failed', ex)
+       //  }))
+      .then(fetch('https://bitbns.com/order/getTickerAll',{
+        headers: {
+            'Access-Control-Allow-Origin' : '*',
+            'Content-Type': 'application/json'
+        },
+        'crossDomain': true,
+        'mode':'no-cors'
+      })
+        .then(response => response)
+        .then(responseJson => {
+           console.log("bitbns", responseJson);
+          if (responseJson){
+            // this.setState({
+            //   bitbns : responseJson.data.price[0] 
+            // });
+            // this.updateData();
+
+          }
+          return responseJson;
+        }))
+
+
         // .then(fetchJsonp('https://www.unocoin.com/trade?all',{
         //   'mode':'cors',
         //   'timeout':3000
