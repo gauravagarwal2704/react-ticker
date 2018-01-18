@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import './PriceCard.css';
 import Grid from 'material-ui/Grid';
-import Card, { CardActions, CardContent, CardHeader, CardMedia } from 'material-ui/Card';
+import Card, { CardContent, CardHeader } from 'material-ui/Card';
 import Button from 'material-ui/Button';
 import Typography from 'material-ui/Typography';
 import Avatar from 'material-ui/Avatar';
-import PriceCard from './PriceCard';
+// import PriceCard from './PriceCard';
 
 
 const styles = {
@@ -24,9 +24,6 @@ const styles = {
 
 class PriceCardContainer extends Component {
 
-  constructor(props){
-    super(props);
-  }
 
   render() {
        var cards = this.props.all_data.map((cardData)=>{

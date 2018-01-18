@@ -23,6 +23,7 @@ class App extends Component {
   
   componentWillMount() {
     this.getTickerDataFetch();
+    this.fetchUnocoin();
   }
 
 
@@ -65,40 +66,62 @@ class App extends Component {
           }
           return responseJson;
         }))
-        .then(fetchJsonp('https://www.unocoin.com/trade?all')
-            .then(function(response) {
-              console.log('from-jsonp', response)
-              return response.json()
-            }).then(function(json) {
-              console.log('parsed json', json)
-            }).catch(function(ex) {
-              console.log('parsing failed', ex)
-        }))
+        // .then(fetchJsonp('https://www.unocoin.com/trade?all',{
+        //   'mode':'cors',
+        //   'timeout':3000
+        // })
+        //     .then(function(response) {
+        //       console.log('from-jsonp', response)
+        //       return response.text()
+        //     }).then(function(json) {
+        //       console.log('parsed json', json)
+        //     }).catch(function(ex) {
+        //       console.log('parsing failed', ex)
+        // }))
       
-      .then(fetch('https://www.unocoin.com/trade?all',{
-        headers: {
-            'Access-Control-Allow-Origin' : '*',
-            'Content-Type': 'application/json',
-        },
-        'dataType': "jsonp",
-        'timeout' : 5000,
-        'mode':'no-cors',
-        'async' : false
-      })
-        .then(responseJson => {
-           console.log("unocoin", responseJson);
-          if (responseJson){
-            console.log('Unocoin',responseJson)
-            this.setState({
-              unocoin : responseJson 
-            });
-          }
-          return responseJson;
-        }))
+      // .then(fetch('https://www.unocoin.com/trade?all',{
+      //   headers: {
+      //       'Access-Control-Allow-Origin' : '*',
+      //       'Content-Type': 'application/json',
+      //   },
+      //   'dataType': "jsonp",
+      //   'timeout' : 5000,
+      //   'crossDomain': true,
+      //   'mode':'no-cors'
+      //   // 'async' : false
+      // })
+      // .then(response => response.json())
+      //   .then(json => {
+      //      console.log("unocoin", json);
+      //     if (json){
+      //       console.log('Unocoin',json)
+      //       this.setState({
+      //         unocoin : json 
+      //       });
+      //     }
+      //     return json;
+      //   }))
       .catch(error => {
         console.error(error);
       });
   }
+
+fetchUnocoin = () =>{
+  fetch('https://www.unocoin.com/trade?all', {mode : 'no-cors'})
+          // .then(response => {
+          //   return response;
+          // })
+          .then(function(response) {
+            console.log('from-jsonp', response)
+            //return response.text()
+          })
+        //   .then(function(json) {
+        //     console.log('parsed json', json)
+        //   })
+        //   .catch(function(ex) {
+        //     console.log('parsing failed', ex)
+        // })
+}
 
 updateData = ()=>{
         this.setState({

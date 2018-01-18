@@ -1,0 +1,751 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"tb",
+				"tb_eth"
+			],
+			[
+				"tb_",
+				"tb_eth"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"radi",
+				"radioYes"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"ma",
+				"margin-left"
+			],
+			[
+				"padding",
+				"padding-left"
+			],
+			[
+				"font-s",
+				"font-size"
+			],
+			[
+				"alig",
+				"align-items"
+			],
+			[
+				"text-a",
+				"text-align"
+			],
+			[
+				"margi",
+				"margin-top"
+			],
+			[
+				"mag",
+				"margin-bottom"
+			],
+			[
+				"marg",
+				"margin-bottom"
+			],
+			[
+				"border-c",
+				"border-color"
+			],
+			[
+				"opt",
+				"option\tTag"
+			],
+			[
+				"C",
+				"Comfortaa"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"fno",
+				"font-size"
+			],
+			[
+				"backg",
+				"background-color"
+			],
+			[
+				"d",
+				"div\tTag"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/App.js",
+			"settings":
+			{
+				"buffer_size": 5156,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/Components/PriceCardContainer.js",
+			"settings":
+			{
+				"buffer_size": 2960,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "public/index.html",
+			"settings":
+			{
+				"buffer_size": 1682,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Components/PriceCard.css",
+			"settings":
+			{
+				"buffer_size": 154,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/Components/Header.js",
+			"settings":
+			{
+				"buffer_size": 428,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/Components/PriceCard.js",
+			"settings":
+			{
+				"buffer_size": 899,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/App.css",
+			"settings":
+			{
+				"buffer_size": 72,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "working codes.txt",
+			"settings":
+			{
+				"buffer_size": 3348,
+				"encoding": "UTF-8",
+				"line_ending": "Windows",
+				"name": "working codes"
+			}
+		},
+		{
+			"file": "src/helper.js",
+			"settings":
+			{
+				"buffer_size": 895,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 302.0,
+		"last_filter": "insta",
+		"selected_items":
+		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 484.0
+	},
+	"console":
+	{
+		"height": 412.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/E/react-practice/react-ticker",
+		"/E/react-practice/react-ticker/src",
+		"/E/react-practice/react-ticker/src/Components"
+	],
+	"file_history":
+	[
+		"/E/react-practice/react-ticker/src/Components/PriceCard.js",
+		"/E/react-practice/react-udemy/reactStrap/react-strap/src/Components/Navbar.js",
+		"/E/react-practice/react-udemy/reactStrap/react-strap/src/App.js",
+		"/E/react-practice/react-udemy/reactStrap/react-strap/public/resumeData.json",
+		"/E/react-practice/react-udemy/reactStrap/react-strap/src/Components/About.js",
+		"/E/react-practice/react-ticker/package-lock.json",
+		"/E/react-practice/react-ticker/src/App.js",
+		"/C/Users/Gaurav Agarwal/Desktop/dump.sql",
+		"/C/Windows/System32/drivers/etc/hosts",
+		"/C/Windows/WinSxS/amd64_microsoft-windows-w..ucture-other-minwin_31bf3856ad364e35_10.0.15063.0_none_465376af9de0ab9a/hosts",
+		"/C/Users/Gaurav Agarwal/Desktop/circ-reveal/index.html",
+		"/E/AutoNxt Projs/OwlCarousel2-2.2.1/docs/demos/responsive.html",
+		"/C/Users/Gaurav Agarwal/Desktop/Circle-Reveal-CSS-master/demo/circle-reveal.html",
+		"/C/Users/Gaurav Agarwal/Desktop/Circle-Reveal-CSS-master/demo/circle-reveal-legacy.html",
+		"/C/Users/GAURAV~1/AppData/Local/Temp/Rar$DRa0.198/Logo/Grid.svg",
+		"/C/Users/Gaurav Agarwal/Downloads/Icon.svg",
+		"/E/angular-4 practice/about-us-pipeline/index.html",
+		"/E/angular-4 practice/firebase-app/script.js",
+		"/C/xampp/htdocs/wordpress/wp-content/themes/realhomes/framework/functions/contact-form-handlers.php",
+		"/C/Users/Gaurav Agarwal/Downloads/real-estate.sql",
+		"/C/xampp/php/php.ini",
+		"/C/Users/Gaurav Agarwal/Desktop/New folder (2)/Bombayworks-test/assets/css/styles.css",
+		"/C/Users/Gaurav Agarwal/Desktop/New folder (2)/Bombayworks-test/index.html",
+		"/C/Users/Gaurav Agarwal/Desktop/New folder (2)/Bombayworks-test/assets/js/calc.js",
+		"/C/Users/Gaurav Agarwal/Desktop/abc",
+		"/E/grunt-practice/Gruntfile.js",
+		"/E/grunt-practice/package.json",
+		"/G/Electr-fii/webiopi.js",
+		"/G/Electr-fii/Electr-fi/Scripts/Whole_Scripts.js",
+		"/C/Users/Gaurav Agarwal/Downloads/ITR-3_2017/ITR-3_AY201718_PR4.jar",
+		"/C/xampp/htdocs/TrunkCopy/vendor_database.sql",
+		"/C/xampp/htdocs/Vendor_trials/app.js",
+		"/C/xampp/htdocs/Vendor_trials/index.html",
+		"/C/xampp/htdocs/TrunkCopy/application/views/landingPage.php",
+		"/C/xampp/htdocs/TrunkCopy/assets/index/js/main.js",
+		"/C/xampp/htdocs/angular-file-upload/angular-file-upload-master/examples/without-bootstrap/index.html",
+		"/C/xampp/htdocs/angular-file-upload/angular-file-upload-master/examples/simple/index.html",
+		"/C/xampp/htdocs/Vendor/vendor.html",
+		"/C/xampp/htdocs/TrunkCopy/assets/css/custom.css",
+		"/C/xampp/htdocs/TrunkCopy/assets/js/custom.js",
+		"/C/Users/Gaurav Agarwal/Desktop/angularjs-imageupload-directive-master/demo.html",
+		"/C/Users/Gaurav Agarwal/Desktop/angularjs-imageupload-directive-master/public/javascripts/imageupload.js",
+		"/E/Vendor/main.js",
+		"/C/xampp/htdocs/Vendor/vendorupload.html",
+		"/C/Users/Gaurav Agarwal/Desktop/Vendor/vendorupload.html",
+		"/C/Users/Gaurav Agarwal/Downloads/angular-file-upload-master/angular-file-upload-master/examples/simple/index.html",
+		"/C/Users/Gaurav Agarwal/Desktop/twilson63-ngUpload-6ec3f86/examples/nodejs/index.html",
+		"/C/Users/Gaurav Agarwal/Desktop/twilson63-ngUpload-6ec3f86/examples/nodejs/app.js",
+		"/C/xampp/htdocs/Vendor/app.js",
+		"/C/Users/Gaurav Agarwal/Desktop/twilson63-ngUpload-6ec3f86/examples/nodejs/node_modules/formidable/lib/multipart_parser.js",
+		"/C/Users/Gaurav Agarwal/Desktop/Vendor/ngupl.html",
+		"/C/Users/Gaurav Agarwal/Desktop/Vendor/angular.min.js",
+		"/C/Users/Gaurav Agarwal/Desktop/Vendor/ng-upload.js",
+		"/C/xampp/htdocs/TrunkCopy/assets/index/js/custom.js",
+		"/C/Users/Gaurav Agarwal/Desktop/Vendor/vendor.html",
+		"/C/xampp/htdocs/TrunkCopy/application/controllers/Vendor.php",
+		"/C/xampp/htdocs/Vendor_trials/saveform.php",
+		"/C/xampp/htdocs/TrunkCopy/application/controllers/Upload.php",
+		"/C/xampp/htdocs/TrunkCopy/application/config/routes.php",
+		"/C/xampp/htdocs/TrunkCopy/application/views/Upload_success.php",
+		"/C/xampp/htdocs/TrunkCopy/application/views/Upload_form.php",
+		"/C/xampp/htdocs/Trunk/assets/css/custom.css",
+		"/C/xampp/htdocs/Trunk/application/views/landingPage.php",
+		"/C/Users/Gaurav Agarwal/Desktop/vendor.html"
+	],
+	"find":
+	{
+		"height": 40.0
+	},
+	"find_in_files":
+	{
+		"height": 616.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"responseJson",
+			"updateData",
+			"Typography",
+			"btc",
+			"p>",
+			"p",
+			"<p",
+			"p",
+			"\"",
+			"</Paper>",
+			"<Paper>",
+			"className={classes.paper}",
+			"3",
+			"image",
+			"\"",
+			"sell_price",
+			"tb_eth",
+			"zebpay",
+			"buy",
+			"zebpay",
+			"<",
+			"<PriceCard />",
+			"props",
+			"className=",
+			"<Paper className=\"\">xs=6 sm=3</Paper>",
+			"PriceCard",
+			"4",
+			"label=",
+			"{classes.paper}",
+			"<Paper className={classes.paper}>xs=12 sm=6</Paper>",
+			"sm={6}",
+			"Header",
+			"tb_eth",
+			"  \n",
+			"tb_btc",
+			"zebpay",
+			"[]"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/App.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5156,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2947,
+								2947
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1120.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/Components/PriceCardContainer.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2960,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								423,
+								423
+							]
+						],
+						"settings":
+						{
+							"open_with_edit": true,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "public/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1682,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								743,
+								743
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/Components/PriceCard.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 154,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								99,
+								99
+							]
+						],
+						"settings":
+						{
+							"open_with_edit": true,
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/Components/Header.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 428,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								249,
+								249
+							]
+						],
+						"settings":
+						{
+							"open_with_edit": true,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/Components/PriceCard.js",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 899,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								423,
+								423
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/App.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 72,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								72,
+								72
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "working codes.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3348,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								90,
+								90
+							]
+						],
+						"settings":
+						{
+							"auto_name": "working codes",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "src/helper.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 895,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								308,
+								377
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"default_dir": "E:\\react-practice\\react-ticker",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 22.0
+	},
+	"input":
+	{
+		"height": 208.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "react-ticker.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"C:\\Users\\Gaurav Agarwal\\Desktop\\autonxt-website.sublime-workspace"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 231.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
