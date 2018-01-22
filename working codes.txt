@@ -106,3 +106,77 @@ working codes
           <FlatButton label="Reduce" onClick={this.handleReduce} />
         </CardActions>
       </Card>
+
+
+New **/////////////////////************************
+
+
+       // .then(fetchJsonp('https://bitbns.com/order/getTickerAll',{
+       //    'mode':'no-cors',
+       //    'timeout':3000,
+       //  })
+       //      .then(function(response) {
+       //        console.log('bitbns', response)
+       //        return response
+       //      }).then(function(json) {
+       //        console.log('parsed json', json)
+       //      }).catch(function(ex) {
+       //        console.log('parsing failed', ex)
+       //  }))
+      // .then(fetch('https://bitbns.com/order/getTickerAll',{
+      //   headers: {
+      //       'Access-Control-Allow-Origin' : '*',
+      //       'Content-Type': 'application/json'
+      //   },
+      //   'crossDomain': true,
+      //   'mode':'no-cors'
+      // })
+      //   .then(response => response)
+      //   .then(responseJson => {
+      //      console.log("bitbns", responseJson);
+      //     if (responseJson){
+      //       // this.setState({
+      //       //   bitbns : responseJson.data.price[0] 
+      //       // });
+      //       // this.updateData();
+
+      //     }
+      //     return responseJson;
+      //   }))
+
+
+        // .then(fetchJsonp('https://www.unocoin.com/trade?all',{
+        //   'mode':'cors',
+        //   'timeout':3000
+        // })
+        //     .then(function(response) {
+        //       console.log('from-jsonp', response)
+        //       return response.text()
+        //     }).then(function(json) {
+        //       console.log('parsed json', json)
+        //     }).catch(function(ex) {
+        //       console.log('parsing failed', ex)
+        // }))
+      
+      // .then(fetch('https://www.unocoin.com/trade?all',{
+      //   headers: {
+      //       'Access-Control-Allow-Origin' : '*',
+      //       'Content-Type': 'application/json',
+      //   },
+      //   'dataType': "jsonp",
+      //   'timeout' : 5000,
+      //   'crossDomain': true,
+      //   'mode':'no-cors'
+      //   // 'async' : false
+      // })
+      // .then(response => response.json())
+      //   .then(json => {
+      //      console.log("unocoin", json);
+      //     if (json){
+      //       console.log('Unocoin',json)
+      //       this.setState({
+      //         unocoin : json 
+      //       });
+      //     }
+      //     return json;
+      //   }))

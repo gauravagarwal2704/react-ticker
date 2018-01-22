@@ -14,170 +14,87 @@ palette: {
 },
 });
 
+let urls;
+
 
 class App extends Component {
 
   constructor(props){
     super(props);
     this.state = {
-      zebpay : {},
-      tb_btc : {},
-      tb_eth : {},
-      koinex:{},
-      bitbns:{},
-      unocoin : 0,
       data:[]
     }
   }
   
-  componentWillMount() {
+  componentDidMount() {
     this.getTickerDataFetch();
-    this.fetchUnocoin();
+    // this.fetchUnocoin();
   }
 
 
 
   getTickerDataFetch=()=> {
-    return fetch('https://www.zebapi.com/api/v1/market/ticker/btc/inr')
-      .then(response => response.json())
-      .then(responseJson => {
-        // console.log("Zebpay", responseJson);
-        if (responseJson){
-          this.setState({
-            zebpay : responseJson 
-          });
-          this.updateData();
-        }
-        return responseJson;
-      })
-      .then(fetch('https://www.throughbit.com/tbit_ci/index.php/cryptoprice/type/eth/inr')
-        .then(response => response.json())
-        .then(responseJson => {
-           // console.log("tb_eth", responseJson);
-          if (responseJson){
-            this.setState({
-              tb_eth : responseJson.data.price[0] 
-            });
-            this.updateData();
-          }
-          return responseJson;
-        }))
-      .then(fetch('https://www.throughbit.com/tbit_ci/index.php/cryptoprice/type/btc/inr')
-        .then(response => response.json())
-        .then(responseJson => {
-           // console.log("tb_btc", responseJson);
-          if (responseJson){
-            this.setState({
-              tb_btc : responseJson.data.price[0] 
-            });
-            this.updateData();
+    urls = [
+      "https://www.zebapi.com/api/v1/market/ticker/btc/inr",
+      'https://www.throughbit.com/tbit_ci/index.php/cryptoprice/type/btc/inr',
+      'https://www.throughbit.com/tbit_ci/index.php/cryptoprice/type/eth/inr',
+      'https://koinex.in/api/ticker',
+      'https://api.coinbase.com/v2/prices/BTC-INR/buy',
+      'https://api.coinbase.com/v2/prices/BTC-INR/sell',
+      'https://api.coinbase.com/v2/prices/ETH-INR/buy',
+      'https://api.coinbase.com/v2/prices/ETH-INR/sell',
+      'https://api.coinbase.com/v2/prices/BCH-INR/buy',
+      'https://api.coinbase.com/v2/prices/BCH-INR/sell',
+      'https://api.coinbase.com/v2/prices/LTC-INR/buy',
+      'https://api.coinbase.com/v2/prices/LTC-INR/sell',
+      // 'https://bitbns.com/order/getTickerAll'
+    ];
 
-          }
-          return responseJson;
-        }))
-      .then(fetch('https://koinex.in/api/ticker')
-        .then(response => response.json())
-        .then(responseJson => {
-           // console.log("koinex", responseJson);
-          if (responseJson){
-            // this.setState({
-            //   koinex : responseJson.data.price[0] 
-            // });
-            // this.updateData();
-
-          }
-          return responseJson;
-        }))
-       // .then(fetchJsonp('https://bitbns.com/order/getTickerAll',{
-       //    'mode':'no-cors',
-       //    'timeout':3000,
-       //  })
-       //      .then(function(response) {
-       //        console.log('bitbns', response)
-       //        return response
-       //      }).then(function(json) {
-       //        console.log('parsed json', json)
-       //      }).catch(function(ex) {
-       //        console.log('parsing failed', ex)
-       //  }))
-      .then(fetch('https://bitbns.com/order/getTickerAll',{
-        headers: {
-            'Access-Control-Allow-Origin' : '*',
-            'Content-Type': 'application/json'
-        },
-        'crossDomain': true,
-        'mode':'no-cors'
-      })
-        .then(response => response)
-        .then(responseJson => {
-           console.log("bitbns", responseJson);
-          if (responseJson){
-            // this.setState({
-            //   bitbns : responseJson.data.price[0] 
-            // });
-            // this.updateData();
-
-          }
-          return responseJson;
-        }))
-
-
-        // .then(fetchJsonp('https://www.unocoin.com/trade?all',{
-        //   'mode':'cors',
-        //   'timeout':3000
-        // })
-        //     .then(function(response) {
-        //       console.log('from-jsonp', response)
-        //       return response.text()
-        //     }).then(function(json) {
-        //       console.log('parsed json', json)
-        //     }).catch(function(ex) {
-        //       console.log('parsing failed', ex)
-        // }))
-      
-      // .then(fetch('https://www.unocoin.com/trade?all',{
-      //   headers: {
-      //       'Access-Control-Allow-Origin' : '*',
-      //       'Content-Type': 'application/json',
-      //   },
-      //   'dataType': "jsonp",
-      //   'timeout' : 5000,
-      //   'crossDomain': true,
-      //   'mode':'no-cors'
-      //   // 'async' : false
-      // })
-      // .then(response => response.json())
-      //   .then(json => {
-      //      console.log("unocoin", json);
-      //     if (json){
-      //       console.log('Unocoin',json)
-      //       this.setState({
-      //         unocoin : json 
-      //       });
-      //     }
-      //     return json;
-      //   }))
-      .catch(error => {
-        console.error(error);
-      });
+    var promises = urls.map(url => fetch(url).then(y => y.json()));
+    Promise.all(promises).then(results => {
+        console.log(results);
+        this.setState({
+          zebpay:{buy:results[0].buy, sell:results[0].sell},
+          throughbit:{
+            btc : {buy:results[1].data.price[0].buy_price, sell:results[1].data.price[0].sell_price},
+            eth : {buy:results[2].data.price[0].buy_price, sell:results[2].data.price[0].sell_price}
+          },
+          koinex:{
+            btc  : {buy:results[3].stats.BCH.lowest_ask, sell:results[3].stats.BCH.highest_bid},
+            bch  : {buy:results[3].stats.BTC.lowest_ask, sell:results[3].stats.BTC.highest_bid},
+            eth  : {buy:results[3].stats.ETH.lowest_ask, sell:results[3].stats.ETH.highest_bid},
+            ltc  : {buy:results[3].stats.LTC.lowest_ask, sell:results[3].stats.LTC.highest_bid},
+            xrp  : {buy:results[3].stats.XRP.lowest_ask, sell:results[3].stats.XRP.highest_bid},
+            iota : {buy:results[3].prices.MIOTA},
+            gnt  : {buy:results[3].prices.GNT}
+          },
+          coinbase:{
+            btc : {buy: results[4].data.amount, sell:results[5].data.amount},
+            eth : {buy: results[6].data.amount, sell:results[7].data.amount},
+            bch : {buy: results[8].data.amount, sell:results[9].data.amount},
+            ltc : {buy: results[10].data.amount, sell:results[11].data.amount}
+          },
+          bitbns:{}
+        });
+        this.updateData();
+        console.log(this.state);
+    });
+    return promises
   }
 
-fetchUnocoin = () =>{
-  fetch('https://www.unocoin.com/trade?all', {mode : 'no-cors'})
-          // .then(response => {
-          //   return response;
-          // })
-          .then(function(response) {
-            console.log('from-jsonp', response)
-            //return response.text()
-          })
-        //   .then(function(json) {
-        //     console.log('parsed json', json)
-        //   })
-        //   .catch(function(ex) {
-        //     console.log('parsing failed', ex)
-        // })
-}
+// fetchUnocoin = () =>{
+//   fetch('https://www.unocoin.com/trade?all', {mode : 'no-cors'})
+//           .then(function(response) {
+//             console.log('from-jsonp', response)
+//             //return response.text()
+//           })
+//         //   .then(function(json) {
+//         //     console.log('parsed json', json)
+//         //   })
+//         //   .catch(function(ex) {
+//         //     console.log('parsing failed', ex)
+//         // })
+// }
 
 updateData = ()=>{
         this.setState({
@@ -192,16 +109,16 @@ updateData = ()=>{
             },
             {
               "name":"ThroughBit BTC",
-              "buy":this.state.tb_btc.buy_price,
-              "sell":this.state.tb_btc.sell_price,
+              "buy":this.state.throughbit.btc.buy,
+              "sell":this.state.throughbit.btc.sell,
               "image" : "images/throughbit.jpg",
               "coin" : "btc",
               "coin_path" : 'images/btc.png'
             },
             {
               "name":"ThroughBit ETH",
-              "buy":this.state.tb_eth.buy_price,
-              "sell":this.state.tb_eth.sell_price,
+              "buy":this.state.throughbit.eth.buy,
+              "sell":this.state.throughbit.eth.sell,
               "image" : "images/throughbit.jpg",
               "coin" : "eth",
               "coin_path" : 'images/eth.png'

@@ -20,6 +20,10 @@ const styles = {
     width: 60,
     height: 60,
   },
+  smallAvatar: {
+    width: 45,
+    height: 45,
+  },
 };
 
 class PriceCardContainer extends Component {
@@ -54,7 +58,7 @@ class PriceCardContainer extends Component {
                               <Avatar aria-label="Recipe"  
                               alt={cardData.coin} 
                               src={cardData.coin_path}
-                              style={styles.bigAvatar}
+                              style={styles.smallAvatar}
                               />
                     </div>
 
