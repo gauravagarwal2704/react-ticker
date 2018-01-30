@@ -4,11 +4,13 @@
   "private": true,
   "dependencies": {
     "axios": "^0.17.1",
+    "cryptocoins": "github:CryptoCommunity/cryptocoins",
     "fetch-jsonp": "^1.1.3",
     "loadash": "^1.0.0",
     "material-ui": "^1.0.0-beta.23",
     "material-ui-icons": "^1.0.0-beta.17",
     "react": "^16.2.0",
+    "react-cryptocoins": "^1.0.11",
     "react-dom": "^16.2.0",
     "react-scripts": "1.0.17"
   },
