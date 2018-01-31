@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import Grid from 'material-ui/Grid';
+import {toUpperCase, toCamelCase} from './helpers/case-conversions';
 import Card, { CardContent, CardHeader } from 'material-ui/Card';
-import Button from 'material-ui/Button';
 import Typography from 'material-ui/Typography';
 import Avatar from 'material-ui/Avatar';
 import Divider from 'material-ui/Divider';
-import { Btc, Eth, Bch, Ltc, Xmr, Iota, Gnt, Omg, Etc, Neo, Zec, Dash, Btg, Gas, Xrp } from 'react-cryptocoins';
+import NumberFormat from 'react-number-format';
+import { Btc, Eth, Bch, Ltc, /*Xmr, Iota, Gnt,*/ Omg, /*Etc,*/ Neo, /*Zec,Dash, Btg, Gas,*/  Xrp, Qtum, Str } from 'react-cryptocoins';
 import './cryptocoins-colors.css';
 import './Coins.css';
 
@@ -33,191 +34,73 @@ const styles = {
     fontWeight:800,
     fontSize:'15px',
   },
+  red:{
+    color:'red'
+  },
+  green:{
+    color:'green'
+  },
   prices:{
     paddingTop: '6px',
     fontFamily:'Josefin Sans'
   }
 };
 
-const cardData = [
-  {
-    "name": "Koinex",
-    "image": "images/exchanges/koinex.jpg",
-    "prices": [
-      {
-        "name": "Ethereum",
-        "symbol" : "Eth",
-        "buy": "77502.0",
-        "sell": "77310.0"
-      },
-      {
-        "name": "Bitcoin",
-        "symbol" : "Btc",
-        "buy": "839998.0",
-        "sell": "835001.0"
-      },
-      {
-        "name": "Litecoin",
-        "symbol" : "Ltc",
-        "buy": "13596.0",
-        "sell": "13501.0"
-      },
-      {
-        "name": "Ripple",
-        "symbol" : "Xrp",
-        "buy": "101.98",
-        "sell": "101.55"
-      },
-      {
-        "name": "Bitcoin Cash",
-        "symbol" : "Bch",
-        "buy": "123499.0",
-        "sell": "122280.01"
-      }
-    ]
-  },
-  {
-    "name": "Zebpay",
-    "image": "images/exchanges/zebpay.png",
-    "prices": [
-      {
-        "name": "Bitcoin",
-        "symbol" : "Btc",
-        "buy": "123",
-        "sell": "120"
-      },
-      {
-        "name": "Bitcoin Cash",
-        "symbol" : "Bch",
-        "buy": "1234",
-        "sell": "12345"
-      },
-      {
-        "name": "Litecoin",
-        "symbol" : "Ltc",
-        "buy": "1234",
-        "sell": "12345"
-      }
-    ]
-  },
-  {
-    "name": "BitBnS",
-    "image": "images/exchanges/bitbns.png",
-    "prices": [
-      {
-        "name": "Bitcoin",
-        "symbol" : "Btc",
-        "buy": "123",
-        "sell": "120"
-      },
-      {
-        "name": "Ripple",
-        "symbol" : "Xrp",
-        "buy": "1234",
-        "sell": "12345"
-      },
-      {
-        "name": "NEO",
-        "symbol" : "Neo",
-        "buy": "1234",
-        "sell": "12345"
-      },
-      
-      {
-        "name": "Ethereum",
-        "symbol" : "Eth",
-        "buy": "1234",
-        "sell": "12345"
-      }
-    ]
-  },
-  {
-    "name": "Unocoin",
-    "image": "images/exchanges/unocoin.png",
-    "prices": [
-      {
-        "name": "Bitcoin",
-        "symbol" : "Btc",
-        "buy": "123",
-        "sell": "120"
-      },
-    ]
-  },
-  {
-    "name": "Coinbase",
-    "image": "images/exchanges/coinbase.png",
-    "prices": [
-      {
-        "name": "Bitcoin",
-        "symbol" : "Btc",
-        "buy": "123",
-        "sell": "120"
-      },
-      {
-        "name": "Bitcoin Cash",
-        "symbol" : "Bch",
-        "buy": "123",
-        "sell": "120"
-      },
-      {
-        "name": "Ethereum",
-        "symbol" : "Eth",
-        "buy": "123",
-        "sell": "120"
-      },
-      {
-        "name": "Litecoin",
-        "symbol" : "Ltc",
-        "buy": "123",
-        "sell": "120"
-      },
-    ]
-  }
-]
-
 class Coins extends Component {
 
+   constructor(props){
+    super(props);
+    this.state = {
+      data:[]
+    }
+  }
+
+
 coinType=(coin)=>{
+  let Coins = toCamelCase(coin);
+  // console.log(Coins);
   let components = {
-     Btc:Btc, Eth:Eth, Bch:Bch, Ltc:Ltc, Xmr:Xmr, Iota:Iota, Gnt:Gnt, Omg:Omg, Etc:Etc, Neo:Neo, Zec:Zec, Dash:Dash, Btg:Btg, Xrp:Xrp 
+     Btc:Btc, Eth:Eth, Bch:Bch, Ltc:Ltc, Gas:Neo, Qtum:Qtum, Omg:Omg, Neo:Neo, Xrp:Xrp , Xlm:Str
   };
-  let MyCoin = components[coin];
-  return <MyCoin className={coin} size={45} key={coin}/>;
+  let MyCoin = components[Coins];
+  return <MyCoin className={Coins} size={30}>{Coins}</MyCoin>;
 }
 
 render() {
  var coinNames = new Set();
  var coinSymbols = new Set();
-  cardData.map(o => {
+
+  if(this.props.dataFromApp){
+      var cards = this.props.dataFromApp.map(o => {
     o.prices.map(c => coinNames.add(c.name))
     o.prices.map(s=> coinSymbols.add(s.symbol))
   })
    var finalCoins = [...coinNames];
-   var finalSymbols = [...coinSymbols];
-   console.log(finalSymbols);
-  var cards = finalCoins.map((cn, i) => {
+   // var finalSymbols = [...coinSymbols];
+   // console.log(finalSymbols);
+  cards = finalCoins.map((cn, i) => {
     return <Grid item xs={12} sm={6} md={3} lg={3} key={cn}>
-                    <Card >
+                    <Card key={cn}>
                       <div>
                       <span></span>
                         <CardHeader
                           title={
                                   <Typography component="p">
-                                    <span className="titles">{cn}</span>
+                                    <span className="titles">{toUpperCase(cn)}</span>
                                   </Typography>
                                 }
                           avatar={
-                                  this.coinType(finalSymbols[i])
+                                  this.coinType(finalCoins[i])
                                   
                                 }
                         />
                         <Divider />
                       </div>
-           <CardContent>
-                    <div style={styles.c_container}>
-                      <div>
+           <CardContent key={cn}>
+                    <div style={styles.c_container} key={cn}>
+                      <div key={cn}>
                       </div>
-                      <div>
+                      <div key={i}>
                         <Typography component="p">
                           <span className="prices" style={styles.heading}><i>Buy &nbsp;&nbsp;</i> |&nbsp;&nbsp; <i>Sell</i></span>
                         </Typography>
@@ -225,7 +108,7 @@ render() {
                       </div>
                     </div>
                      {
-              cardData.map(o => o.prices.map(p => {
+              this.props.dataFromApp.map(o => o.prices.map(p => {
                 if (p.name === cn) {
                   //console.log(`${o.name} | ${p.buy} | ${p.sell}`)
                   return <div key={p.symbol}>
@@ -240,7 +123,10 @@ render() {
                       </div>
                       <div style={styles.prices}>
                         <Typography component="p">
-                          <span className="prices" style={styles.prices}> ₹ {p.buy} | ₹ {p.sell}</span>
+                        <span style={styles.prices}>
+                          ₹ <NumberFormat value={p.buy} displayType={'text'} thousandSeparator={true} style={styles.green}/> <b>|</b> 
+                          &nbsp;₹ <NumberFormat value={p.sell} displayType={'text'} thousandSeparator={true} style={styles.red}/>
+                          </span>
                           <br/>
                         </Typography>
                       </div>
@@ -256,6 +142,7 @@ render() {
                  
             </Grid>
   })
+}
                 
         return (
             <div  style={{ padding: 10 }} spacing={0}>

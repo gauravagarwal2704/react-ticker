@@ -1,15 +1,20 @@
 import React, {Component} from 'react';
+import { withStyles } from 'material-ui/styles';
+import PropTypes from 'prop-types';
 import Grid from 'material-ui/Grid';
+import {toUpperCase, toCamelCase} from './helpers/case-conversions';
 import Card, { CardContent, CardHeader } from 'material-ui/Card';
-import Button from 'material-ui/Button';
+import Tooltip from 'material-ui/Tooltip';
 import Typography from 'material-ui/Typography';
 import Avatar from 'material-ui/Avatar';
 import Divider from 'material-ui/Divider';
-import { Btc, Eth, Bch, Ltc, Xmr, Iota, Gnt, Omg, Etc, Neo, Zec, Dash, Btg, Gas, Xrp } from 'react-cryptocoins';
+import NumberFormat from 'react-number-format';
+import { SyncLoader } from 'react-spinners';
+import { Btc, Eth, Bch, Ltc, /*Xmr, Iota, Gnt,*/ Omg, /*Etc,*/ Neo, /*Zec,Dash, Btg, Gas,*/  Xrp, Qtum, Str } from 'react-cryptocoins';
 import './cryptocoins-colors.css';
-// import * as Icon from 'react-cryptocoins';
+import './Common.css';
 
-const styles = {
+const styles = theme => ({
   row: {
     display: 'flex',
     justifyContent: 'center',
@@ -35,195 +40,92 @@ const styles = {
   prices:{
     paddingTop: '6px',
     fontFamily:'Josefin Sans'
+  },
+  red:{
+    color:'red'
+  },
+  green:{
+    color:'green'
+  },
+  absolute: {
+    left: '-10px',
+    top: '-10px'
+  },
+  loading:{
+    margin: '150px auto'
   }
-};
-
-const cardData = [
-  {
-    "name": "Koinex",
-    "image": "images/exchanges/koinex.jpg",
-    "prices": [
-      {
-        "name": "Ethereum",
-        "symbol" : "Eth",
-        "buy": "77502.0",
-        "sell": "77310.0"
-      },
-      {
-        "name": "Bitcoin",
-        "symbol" : "Btc",
-        "buy": "839998.0",
-        "sell": "835001.0"
-      },
-      {
-        "name": "Litecoin",
-        "symbol" : "Ltc",
-        "buy": "13596.0",
-        "sell": "13501.0"
-      },
-      {
-        "name": "Ripple",
-        "symbol" : "Xrp",
-        "buy": "101.98",
-        "sell": "101.55"
-      },
-      {
-        "name": "Bitcoin Cash",
-        "symbol" : "Bch",
-        "buy": "123499.0",
-        "sell": "122280.01"
-      }
-    ]
-  },
-  {
-    "name": "Zebpay",
-    "image": "images/exchanges/zebpay.png",
-    "prices": [
-      {
-        "name": "Bitcoin",
-        "symbol" : "Btc",
-        "buy": "123",
-        "sell": "120"
-      },
-      {
-        "name": "Bitcoin Cash",
-        "symbol" : "Bch",
-        "buy": "1234",
-        "sell": "12345"
-      },
-      {
-        "name": "Litecoin",
-        "symbol" : "Ltc",
-        "buy": "1234",
-        "sell": "12345"
-      }
-    ]
-  },
-  {
-    "name": "BitBnS",
-    "image": "images/exchanges/bitbns.png",
-    "prices": [
-      {
-        "name": "Bitcoin",
-        "symbol" : "Btc",
-        "buy": "123",
-        "sell": "120"
-      },
-      {
-        "name": "Ripple",
-        "symbol" : "Xrp",
-        "buy": "1234",
-        "sell": "12345"
-      },
-      {
-        "name": "NEO",
-        "symbol" : "Neo",
-        "buy": "1234",
-        "sell": "12345"
-      },
-      
-      {
-        "name": "Ethereum",
-        "symbol" : "Eth",
-        "buy": "1234",
-        "sell": "12345"
-      }
-    ]
-  },
-  {
-    "name": "Unocoin",
-    "image": "images/exchanges/unocoin.png",
-    "prices": [
-      {
-        "name": "Bitcoin",
-        "symbol" : "Btc",
-        "buy": "123",
-        "sell": "120"
-      },
-    ]
-  },
-  {
-    "name": "Coinbase",
-    "image": "images/exchanges/coinbase.png",
-    "prices": [
-      {
-        "name": "Bitcoin",
-        "symbol" : "Btc",
-        "buy": "123",
-        "sell": "120"
-      },
-      {
-        "name": "Bitcoin Cash",
-        "symbol" : "Bch",
-        "buy": "123",
-        "sell": "120"
-      },
-      {
-        "name": "Ethereum",
-        "symbol" : "Eth",
-        "buy": "123",
-        "sell": "120"
-      },
-      {
-        "name": "Litecoin",
-        "symbol" : "Ltc",
-        "buy": "123",
-        "sell": "120"
-      },
-    ]
-  }
-]
+});
 
 class Exchanges extends Component {
 
+  constructor(props){
+    super(props);
+    this.state = {
+      data:[],
+      loading:true
+    }
+  }
+
 coinType=(coin)=>{
+  let Coins = toCamelCase(coin);
+  // console.log(Coins);
   let components = {
-     Btc:Btc, Eth:Eth, Bch:Bch, Ltc:Ltc, Xmr:Xmr, Iota:Iota, Gnt:Gnt, Omg:Omg, Etc:Etc, Neo:Neo, Zec:Zec, Dash:Dash, Btg:Btg, Xrp:Xrp 
+     Btc:Btc, Eth:Eth, Bch:Bch, Ltc:Ltc, Gas:Neo, Qtum:Qtum, Omg:Omg, Neo:Neo, Xrp:Xrp , Xlm:Str
   };
-  let MyCoin = components[coin];
-  return <MyCoin className={coin} size={30}/>;
+  let MyCoin = components[Coins];
+  return <MyCoin className={Coins} size={30}>{Coins}</MyCoin>;
 }
 
+
   render() {
-    var cards = cardData.map((cd)=>{
+    const { classes } = this.props;
+    if(this.props.dataFromApp){
+      var cards = this.props.dataFromApp.map((cd)=>{
         return <Grid item xs={12} sm={6} md={3} lg={3} key={cd.name}>
                   <Card>
                     <CardHeader
                       title={ <Typography component="p">
-                                <span className="titles">{cd.name}</span>
+                                <span className="titles">{toCamelCase(cd.name)}</span>
                               </Typography>
                             }
                       avatar= {
                                 <Avatar aria-label="Exchanges"
                                 alt={cd.name}
                                 src={cd.image}
-                                style={styles.bigAvatar}
+                                className={classes.bigAvatar}
                                 />
                               }
                     />
                     <Divider />
 
                     <CardContent>
-                    <div style={styles.c_container}>
-                      <div>
-                      </div>
+                    <div className={classes.c_container}>
+                      <div></div>
                       <div>
                         <Typography component="p">
-                          <span className="prices" style={styles.heading}><i>Buy &nbsp;&nbsp;</i> |&nbsp;&nbsp; <i>Sell</i></span>
+                          <span  className={classes.heading}><i>Buy &nbsp;&nbsp;</i> |&nbsp;&nbsp; <i>Sell</i></span>
                         </Typography>
                           <br/>
                       </div>
                     </div>
 
                     {cd.prices.map((p)=>{
-                      return <div key={p.symbol}>
-                      <div style={styles.c_container} >
+                      return <div key={p.name}>
+                      <div className={classes.c_container} >
                       <div>
-                        {this.coinType(p.symbol)}                          
+                        
+                        <span>
+                          <Tooltip id="tooltip-right-start" title={toUpperCase(p.name)}  placement="right" disableTriggerTouch>
+                            <span>{this.coinType(p.name)}</span>
+                          </Tooltip>                          
+                        </span>
                       </div>
-                      <div style={styles.prices}>
+                      <div className={classes.prices}>
                         <Typography component="p">
-                          <span className="prices" style={styles.prices}> ₹ {p.buy} | ₹ {p.sell}</span>
+                          <span className={classes.prices}>
+                          ₹ <NumberFormat value={p.buy} displayType={'text'} thousandSeparator={true} className={classes.green}/> <b>|</b> 
+                          &nbsp;₹ <NumberFormat value={p.sell} displayType={'text'} thousandSeparator={true} className={classes.red}/>
+                          </span>
                           <br/>
                         </Typography>
                       </div>
@@ -235,10 +137,19 @@ coinType=(coin)=>{
                   </Card>
             </Grid>
       });
+    }
+    else{
+      cards = <div className={classes.loading}>
+        <SyncLoader
+          color={'#2196F3'} 
+          loading={this.state.loading} 
+        />
+      </div>
+    }
         return (
-          <div  style={{ padding: 10 }} spacing={0}>
+          <div  className={{ padding: 10 }} spacing={0}>
           <Grid container spacing={24}>
-            {cards}
+           {cards}
           </Grid>
           </div>
           );
@@ -246,4 +157,8 @@ coinType=(coin)=>{
   }
 }
 
-export default Exchanges;
+Exchanges.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(Exchanges);

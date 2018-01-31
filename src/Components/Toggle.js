@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Switch from 'material-ui/Switch';
 import Grid from 'material-ui/Grid';
-import Typography from 'material-ui/Typography';
 import './Toggle.css';
 
 const styles = {
@@ -19,10 +18,6 @@ const styles = {
 };
 
 class Toggle extends Component {
-
- constructor(props) {
-    super(props);
-}
 
 state = {
 	isCoin: true,
