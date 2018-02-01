@@ -6,14 +6,13 @@ import Header from './Components/Header';
 import Toggle from './Components/Toggle';
 import Coins from './Components/Coins';
 import Exchanges from './Components/Exchanges';
-import {blue} from 'material-ui/colors';
+import {blue, red} from 'material-ui/colors';
 import './App.css';
 
 const theme = createMuiTheme({
 palette: {
-  primary: blue
+  primary: blue,
 },
-type:'dark'
 });
 
 class App extends Component {
