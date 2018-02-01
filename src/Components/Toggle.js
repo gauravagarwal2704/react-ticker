@@ -14,6 +14,9 @@ const styles = {
  },
  toggleGrid:{
  	top:'50px',
+ },
+ toggleContainer:{
+ 	margin: '25px 0'
  }
 };
 
@@ -33,7 +36,7 @@ state = {
 render() {
 
     return (
-	<div>
+	<div style={styles.toggleContainer}>
 		<Grid container spacing={0}>
 			<Grid item xs={12} style={styles.toggleGrid} >
 				<Grid

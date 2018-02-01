@@ -39,17 +39,13 @@ const styles = theme => ({
   },
   prices:{
     paddingTop: '6px',
-    fontFamily:'Josefin Sans'
+    fontFamily:'Roboto'
   },
   red:{
     color:'red'
   },
   green:{
     color:'green'
-  },
-  absolute: {
-    left: '-10px',
-    top: '-10px'
   },
   loading:{
     margin: '150px auto'
@@ -147,7 +143,7 @@ coinType=(coin)=>{
       </div>
     }
         return (
-          <div  className={{ padding: 10 }} spacing={0}>
+          <div style={{ padding: 10 }} spacing={0}>
           <Grid container spacing={24}>
            {cards}
           </Grid>

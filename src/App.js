@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
-import './App.css';
 import api from './Components/helpers/fetch'
 import Header from './Components/Header';
 // import Footer from './Components/Footer';
@@ -8,6 +7,7 @@ import Toggle from './Components/Toggle';
 import Coins from './Components/Coins';
 import Exchanges from './Components/Exchanges';
 import {blue} from 'material-ui/colors';
+import './App.css';
 
 const theme = createMuiTheme({
 palette: {
@@ -40,8 +40,7 @@ class App extends Component {
     return (
         <MuiThemeProvider theme={theme}>
             <Header/>
-            <br/>
-            <Toggle handleChoice={this.handleChoice}/>
+            <Toggle className="myToggle" handleChoice={this.handleChoice}/>
             {
                 this.state.isCoin 
                 ? 

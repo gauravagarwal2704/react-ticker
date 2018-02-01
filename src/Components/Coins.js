@@ -42,8 +42,8 @@ const styles = {
   },
   prices:{
     paddingTop: '6px',
-    fontFamily:'Josefin Sans'
-  }
+    fontFamily:'Roboto'
+  },
 };
 
 class Coins extends Component {
