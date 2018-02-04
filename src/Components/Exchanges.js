@@ -10,7 +10,7 @@ import Avatar from 'material-ui/Avatar';
 import Divider from 'material-ui/Divider';
 import NumberFormat from 'react-number-format';
 import { SyncLoader } from 'react-spinners';
-import { Btc, Eth, Bch, Ltc, /*Xmr, Iota, Gnt,*/ Omg, /*Etc,*/ Neo, /*Zec,Dash, Btg, Gas,*/  Xrp, Qtum, Str } from 'react-cryptocoins';
+import { Btc, Eth, Bch, Ltc, Xmr,/* Iota, Gnt,*/ Omg, Etc,/**/ Neo, Zec,Dash, Btg, /*Gas,*/  Xrp, Qtum, Str } from 'react-cryptocoins';
 import './cryptocoins-colors.css';
 import './Common.css';
 
@@ -66,7 +66,7 @@ coinType=(coin)=>{
   let Coins = toCamelCase(coin);
   // console.log(Coins);
   let components = {
-     Btc:Btc, Eth:Eth, Bch:Bch, Ltc:Ltc, Gas:Neo, Qtum:Qtum, Omg:Omg, Neo:Neo, Xrp:Xrp , Xlm:Str
+     Btc:Btc, Eth:Eth, Bch:Bch, Ltc:Ltc, Gas:Neo, Etc:Etc, Zec:Zec, Dash:Dash, Btg:Btg, Qtum:Qtum, Omg:Omg, Neo:Neo, Xrp:Xrp , Xlm:Str, Bcc:Bch
   };
   let MyCoin = components[Coins];
   return <MyCoin className={Coins} size={30}>{Coins}</MyCoin>;
