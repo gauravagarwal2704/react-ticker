@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { withStyles } from 'material-ui/styles';
 import PropTypes from 'prop-types';
 import Grid from 'material-ui/Grid';
-import {toUpperCase, toCamelCase} from './helpers/case-conversions';
+import {toUpperCase, toCamelCase, toDisplayName} from './helpers/case-conversions';
 import Card, { CardContent, CardHeader } from 'material-ui/Card';
 import Tooltip from 'material-ui/Tooltip';
 import Typography from 'material-ui/Typography';
@@ -10,7 +10,7 @@ import Avatar from 'material-ui/Avatar';
 import Divider from 'material-ui/Divider';
 import NumberFormat from 'react-number-format';
 import { SyncLoader } from 'react-spinners';
-import { Btc, Eth, Bch, Ltc, Xmr,/* Iota, Gnt,*/ Omg, Etc,/**/ Neo, Zec,Dash, Btg, /*Gas,*/  Xrp, Qtum, Str } from 'react-cryptocoins';
+import { Btc, Eth, Bch, Ltc, Xmr,/* Iota, Gnt,*/ Omg, Etc, Neo, Zec, Dash, Btg, /*Gas,*/  Xrp, Qtum, Str } from 'react-cryptocoins';
 import './cryptocoins-colors.css';
 import './Common.css';
 
@@ -66,10 +66,25 @@ coinType=(coin)=>{
   let Coins = toCamelCase(coin);
   // console.log(Coins);
   let components = {
-     Btc:Btc, Eth:Eth, Bch:Bch, Ltc:Ltc, Gas:Neo, Etc:Etc, Zec:Zec, Dash:Dash, Btg:Btg, Qtum:Qtum, Omg:Omg, Neo:Neo, Xrp:Xrp , Xlm:Str, Bcc:Bch
+        Btc:Btc,
+        Bcc:Bch,
+        Bch:Bch,
+        Btg:Bch,
+        Dash:Dash,
+        Etc:Etc,
+        Eth:Eth,
+        Gas:Neo,
+        Ltc:Ltc,
+        Neo:Neo,
+        Omg:Omg,
+        Qtum:Qtum,
+        Xlm:Str,
+        Xmr:Xmr,
+        Xrp:Xrp,
+        Zec:Zec
   };
   let MyCoin = components[Coins];
-  return <MyCoin className={Coins} size={30}>{Coins}</MyCoin>;
+  return <MyCoin className={MyCoin.name} size={28}>{Coins}</MyCoin>;
 }
 
 
@@ -111,7 +126,7 @@ coinType=(coin)=>{
                       <div>
                         
                         <span>
-                          <Tooltip id="tooltip-right-start" title={toUpperCase(p.name)}  placement="right" disableTriggerTouch>
+                          <Tooltip id="tooltip-right" title={toDisplayName(p.name)}  placement="right" disableTriggerTouch>
                             <span>{this.coinType(p.name)}</span>
                           </Tooltip>                          
                         </span>
@@ -119,8 +134,8 @@ coinType=(coin)=>{
                       <div className={classes.prices}>
                         <Typography component="p">
                           <span className={classes.prices}>
-                          ₹ <NumberFormat value={p.buy} displayType={'text'} thousandSeparator={true} className={classes.green}/> <b>|</b> 
-                          &nbsp;₹ <NumberFormat value={p.sell} displayType={'text'} thousandSeparator={true} className={classes.red}/>
+                          ₹ <NumberFormat value={p.buy} displayType={'text'} decimalScale={2} thousandSeparator={true} className={classes.green}/> <b>|</b> 
+                          &nbsp;₹ <NumberFormat value={p.sell} displayType={'text'} decimalScale={2} thousandSeparator={true} className={classes.red}/>
                           </span>
                           <br/>
                         </Typography>

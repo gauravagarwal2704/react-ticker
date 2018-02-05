@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import Grid from 'material-ui/Grid';
-import {toUpperCase, toCamelCase} from './helpers/case-conversions';
+import {toUpperCase, toCamelCase, toDisplayName} from './helpers/case-conversions';
 import Card, { CardContent, CardHeader } from 'material-ui/Card';
 import Typography from 'material-ui/Typography';
 import Avatar from 'material-ui/Avatar';
 import Divider from 'material-ui/Divider';
 import NumberFormat from 'react-number-format';
-import { Btc, Eth, Bch, Ltc, /*Xmr, Iota, Gnt,*/ Omg, /*Etc,*/ Neo, /*Zec,Dash, Btg, Gas,*/  Xrp, Qtum, Str } from 'react-cryptocoins';
+import { Btc, Eth, Bch, Ltc, Xmr,/* Iota, Gnt,*/ Omg, Etc, Neo, Zec, Dash, Btg, /*Gas,*/  Xrp, Qtum, Str } from 'react-cryptocoins';
 import './cryptocoins-colors.css';
 import './Coins.css';
 
@@ -60,7 +60,22 @@ coinType=(coin)=>{
   let Coins = toCamelCase(coin);
   // console.log(Coins);
   let components = {
-     Btc:Btc, Eth:Eth, Bch:Bch, Ltc:Ltc, Gas:Neo, Qtum:Qtum, Omg:Omg, Neo:Neo, Xrp:Xrp , Xlm:Str
+        Btc:Btc,
+        Bcc:Bch,
+        Bch:Bch,
+        Btg:Bch,
+        Dash:Dash,
+        Etc:Etc,
+        Eth:Eth,
+        Gas:Neo,
+        Ltc:Ltc,
+        Neo:Neo,
+        Omg:Omg,
+        Qtum:Qtum,
+        Xlm:Str,
+        Xmr:Xmr,
+        Xrp:Xrp,
+        Zec:Zec
   };
   let MyCoin = components[Coins];
   return <MyCoin className={Coins} size={30}>{Coins}</MyCoin>;
@@ -86,7 +101,7 @@ render() {
                         <CardHeader
                           title={
                                   <Typography component="p">
-                                    <span className="titles">{toUpperCase(cn)}</span>
+                                    <span className="titles">{toDisplayName(cn)}</span>
                                   </Typography>
                                 }
                           avatar={
@@ -124,8 +139,8 @@ render() {
                       <div style={styles.prices}>
                         <Typography component="p">
                         <span style={styles.prices}>
-                          ₹ <NumberFormat value={p.buy} displayType={'text'} thousandSeparator={true} style={styles.green}/> <b>|</b> 
-                          &nbsp;₹ <NumberFormat value={p.sell} displayType={'text'} thousandSeparator={true} style={styles.red}/>
+                          ₹ <NumberFormat value={p.buy} displayType={'text'} decimalScale={2} thousandSeparator={true} style={styles.green}/> <b>|</b> 
+                          &nbsp;₹ <NumberFormat value={p.sell} displayType={'text'} decimalScale={2} thousandSeparator={true} style={styles.red}/>
                           </span>
                           <br/>
                         </Typography>
