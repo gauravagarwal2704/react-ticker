@@ -84,8 +84,7 @@ coinType=(coin)=>{
         Zec:Zec
   };
   let MyCoin = components[Coins];
-  console.log(MyCoin.name)
-  return <MyCoin className={MyCoin.name} size={28}>{Coins}</MyCoin>;
+  return <MyCoin className={Coins} size={28}>{Coins}</MyCoin>;
 }
 
 
