@@ -26,7 +26,11 @@ export function toDisplayName (coin){
         'Xlm':'Stellar',
         'Xmr':'Monero',
         'Xrp':'Ripple',
-        'Zec':'Zcash'
+        'Zec':'Zcash',
+        'Dgb':'DigiByte',
+        'Sc':'Sia Coin',
+        'Vox':'Voxelus',
+        'Xvg':'Verge'
   }
   let camel = toCamelCase(coin);
   let converted = coinNames[camel] + " ("+toUpperCase(coin)+")";

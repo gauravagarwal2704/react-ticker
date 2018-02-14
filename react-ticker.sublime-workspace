@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"to",
+				"toUpperCase"
+			],
+			[
+				"fetch",
+				"fetchPrices"
+			],
+			[
+				"cons",
+				"console"
+			],
+			[
+				"coin",
+				"coinType"
+			],
+			[
+				"card",
+				"cardData"
+			],
+			[
+				"class",
+				"className"
+			],
+			[
+				"react",
+				"react-cryptocoins"
+			],
+			[
+				"sty",
+				"style"
+			],
+			[
 				"tb",
 				"tb_eth"
 			],
@@ -92,94 +124,92 @@
 	"buffers":
 	[
 		{
-			"file": "src/Components/PriceCardContainer.js",
-			"settings":
-			{
-				"buffer_size": 691,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "src/App.js",
 			"settings":
 			{
-				"buffer_size": 1368,
+				"buffer_size": 1398,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "src/Components/Toggle.js",
+			"file": "src/index.css",
 			"settings":
 			{
-				"buffer_size": 1248,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/Components/Toggle.css",
-			"settings":
-			{
-				"buffer_size": 40,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/App.css",
-			"settings":
-			{
-				"buffer_size": 190,
+				"buffer_size": 99,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/Components/Header.js",
+			"file": "src/Components/Exchanges.js",
 			"settings":
 			{
-				"buffer_size": 428,
+				"buffer_size": 5063,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"contents": "#Koinex :\nhttps://koinex.in/api/ticker\n\n#BitBnS:\nhttps://bitbns.com/order/getTickerAll\n\n#Coinbase:\nhttps://api.coinbase.com/v2/prices/BCH-INR/buy,\nhttps://api.coinbase.com/v2/prices/BCH-INR/sell,\nhttps://api.coinbase.com/v2/prices/BTC-INR/buy,\nhttps://api.coinbase.com/v2/prices/BTC-INR/sell,\nhttps://api.coinbase.com/v2/prices/ETH-INR/buy,\nhttps://api.coinbase.com/v2/prices/ETH-INR/sell,\nhttps://api.coinbase.com/v2/prices/LTC-INR/buy,\nhttps://api.coinbase.com/v2/prices/LTC-INR/sell\n\n#PocketBits:\nhttps://pocketbits.in/Index/getBTCRate\nhttps://pocketbits.in/AltCoins/GetFrontDataBuySell\n\n#Zebpay:\nhttps://www.zebapi.com/api/v1/market/ticker/btc/inr\n\n#Unocoin:\nhttps://www.unocoin.com/trade?all\n  OR\nhttps://www.unocoin.com/api/v1/general/prices\nhttps://www.unocoin.com/oauth/token\nCLIENT_ID = 'GRH4ZOQ68D'\nCLIENT_SECRET = '518dd973-8886-46cd-a91b-ed7d697a391f'\ngrant_type : 'client_credentials',\n\n#ThroughBit:\nhttps://www.throughbit.com/tbit_ci/index.php/cryptoprice/type/btc/inr\nhttps://www.throughbit.com/tbit_ci/index.php/cryptoprice/type/eth/inr\n\n₹\n\nPromise.all(urls.map(fetch)).then(responses =>\n    Promise.all(responses.map(res => res.text())\n).then(texts => {\n    …\n})\n\n- AutoSuggest for Coins/ Cryptocurrency\n- if prev buy/sell is high/low then show in green/red\n- add charts\n\n\n\n\n\n\nfetch('https://www.zebapi.com/api/v1/market/ticker/btc/inr')\n      .then(response => response.json())\n      .then(responseJson => {\n        // console.log(\"Zebpay\", responseJson);\n        if (responseJson){\n          this.setState({\n            zebpay : responseJson \n          });\n          this.updateData();\n        }\n        return responseJson;\n      })\n      .then(fetch('https://www.throughbit.com/tbit_ci/index.php/cryptoprice/type/eth/inr')\n        .then(response => response.json())\n        .then(responseJson => {\n           // console.log(\"tb_eth\", responseJson);\n          if (responseJson){\n            this.setState({\n              tb_eth : responseJson.data.price[0] \n            });\n            this.updateData();\n          }\n          return responseJson;\n        }))\n      .then(fetch('https://www.throughbit.com/tbit_ci/index.php/cryptoprice/type/btc/inr')\n        .then(response => response.json())\n        .then(responseJson => {\n           // console.log(\"tb_btc\", responseJson);\n          if (responseJson){\n            this.setState({\n              tb_btc : responseJson.data.price[0] \n            });\n            this.updateData();\n\n          }\n          return responseJson;\n        }))\n      .then(fetch('https://koinex.in/api/ticker')\n        .then(response => response.json())\n        .then(responseJson => {\n           console.log(\"koinex\", responseJson);\n          if (responseJson){\n            // this.setState({\n            //   koinex : responseJson.data.price[0] \n            // });\n            // this.updateData();\n\n          }\n          return responseJson;\n        }))\n      .then(fetch('https://api.coinbase.com/v2/prices/BCH-INR/buy')\n        .then(response => response.json())\n        .then(responseJson => {\n           console.log(\"coinbase -BCH :\", responseJson);\n          if (responseJson){\n            // this.setState({\n            //   koinex : responseJson.data.price[0] \n            // });\n            // this.updateData();\n\n          }\n          return responseJson;\n        }))\n\n      .catch(error => {\n        console.error(error);\n      });",
+			"file": "src/Components/cryptocoins-colors.css",
 			"settings":
 			{
-				"buffer_size": 3391,
+				"buffer_size": 3482,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Components/Coins.js",
+			"settings":
+			{
+				"buffer_size": 5014,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/Components/Common.css",
+			"settings":
+			{
+				"buffer_size": 155,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/Components/helpers/case-conversions.js",
+			"settings":
+			{
+				"buffer_size": 827,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "#New changes\n\n1. In exchanges, when tap/click on any coin, take to particular coin in coins\n2. Add formatting to the price(add , seperator), add color maybe. -Done\n3. make header sticky maybe, and toggle also sticky, lets see how does it look.\n4. Reduce size of Exchange logo, and decrease space\n5. Add tinted color to background.\n6. If possible, add autocomplete in exchange and coins\n7. long press/ click on any coin to get modal window of chart\n8. Add mailto fab button for new exchanges/coins\n9. Do we have to open-source it ?\n10. #ececec bg color\n\n#Extras\n1. Add button for latest news (might be some package available forlatest crypto news)\n\n#Problems\n1. Extra webfont/SVC folder in public folder\n2. Had to move cryptocoins.css to Components folder\n3. Want to use cryptocoins.css directly from node-modules\n4. ComponentDidUpdate is re-hitting API again and again - Solved\n5. If any new coin is added apart from imported coins, then error will occur\n",
+			"settings":
+			{
+				"buffer_size": 955,
+				"line_ending": "Windows",
+				"name": "#New changes"
+			}
+		},
+		{
+			"contents": "#Koinex :\nhttps://koinex.in/api/ticker\n\n#BitBnS:\nhttps://bitbns.com/order/getTickerAll\n\n#Coinbase:\nhttps://api.coinbase.com/v2/prices/BCH-INR/buy,\nhttps://api.coinbase.com/v2/prices/BCH-INR/sell,\nhttps://api.coinbase.com/v2/prices/BTC-INR/buy,\nhttps://api.coinbase.com/v2/prices/BTC-INR/sell,\nhttps://api.coinbase.com/v2/prices/ETH-INR/buy,\nhttps://api.coinbase.com/v2/prices/ETH-INR/sell,\nhttps://api.coinbase.com/v2/prices/LTC-INR/buy,\nhttps://api.coinbase.com/v2/prices/LTC-INR/sell\n\n#PocketBits:\nhttps://pocketbits.in/Index/getBTCRate\nhttps://pocketbits.in/AltCoins/GetFrontDataBuySell\n\n#Zebpay:\nhttps://www.zebapi.com/api/v1/market/ticker/btc/inr\n\n#Unocoin:\nhttps://www.unocoin.com/trade?all\n  OR\nhttps://www.unocoin.com/api/v1/general/prices\nhttps://www.unocoin.com/oauth/token\nCLIENT_ID = 'GRH4ZOQ68D'\nCLIENT_SECRET = '518dd973-8886-46cd-a91b-ed7d697a391f'\ngrant_type : 'client_credentials',\n\n#ThroughBit:\nhttps://www.throughbit.com/tbit_ci/index.php/cryptoprice/type/btc/inr\nhttps://www.throughbit.com/tbit_ci/index.php/cryptoprice/type/eth/inr\n\n#Coinome\n\n#CoinDelta\nhttps://coindelta.com/api/v1/public/getticker/\n\n#CoinSecure\nhttps://api.coinsecure.in/v1/exchange/ticker\n\n₹\n\nPromise.all(urls.map(fetch)).then(responses =>\n    Promise.all(responses.map(res => res.text())\n).then(texts => {\n    …\n})\n\n- AutoSuggest for Coins/ Cryptocurrency\n- if prev buy/sell is high/low then show in green/red\n- add charts\n\n",
+			"settings":
+			{
+				"buffer_size": 1416,
 				"line_ending": "Windows",
 				"name": "#Koinex :"
 			}
 		},
 		{
-			"contents": "//React with backend server\n\nhttps://medium.freecodecamp.org/how-to-make-create-react-app-work-with-a-node-backend-api-7c5c48acb1b0\nhttps://hackernoon.com/how-to-combine-a-nodejs-back-end-with-a-reactjs-front-end-app-ea9b24715032\nhttps://www.fullstackreact.com/articles/using-create-react-app-with-a-server/\nhttps://scotch.io/tutorials/react-on-the-server-for-beginners-build-a-universal-react-and-node-app\n\n\n\n//TRY(IMPORTANT)\n\nhttps://www.gatsbyjs.org/docs/deploy-gatsby/\nhttps://zeit.co/now\nhttps://www.netlify.com/\nhttps://gohugo.io/\nhttps://www.meteor.com/?ref=producthunt\nhttps://nerv.aotu.io/?ref=producthunt\n\n\n//Crypto-Resources\n\nhttps://www.kaggle.com/natehenderson/top-100-cryptocurrency-historical-data/data\nhttps://www.producthunt.com/e/crypto-projects-you-ll-love\nhttps://www.producthunt.com/\nhttps://bitcoin-price.com/?ref=producthunt\n\n\n//Others\n\nhttps://stories.uplabs.com/7-well-balanced-cards-layouts-2c097dbb16ae\n\nhttps://www.facebook.com/sharan.shetty.733/videos/1639065346136413/\n\n\n//React Router Stuffs\n\nhttps://medium.com/@pshrmn/a-simple-react-router-v4-tutorial-7f23ff27adf\nhttps://medium.com/@notrab/getting-started-with-create-react-app-redux-react-router-redux-thunk-d6a19259f71f\nhttps://medium.mybridge.co/react-js-top-10-articles-for-the-past-month-v-sep-2017-1894c4d91e0c\nhttps://hackernoon.com/debugging-react-like-a-champ-with-vscode-66281760037\nhttps://medium.com/@pshrmn/i-have-to-learn-another-router-d2a770e72c92",
+			"contents": "//React with backend server\n\nhttps://medium.freecodecamp.org/how-to-make-create-react-app-work-with-a-node-backend-api-7c5c48acb1b0\nhttps://hackernoon.com/how-to-combine-a-nodejs-back-end-with-a-reactjs-front-end-app-ea9b24715032\nhttps://www.fullstackreact.com/articles/using-create-react-app-with-a-server/\nhttps://scotch.io/tutorials/react-on-the-server-for-beginners-build-a-universal-react-and-node-app\n\n//React with amazing Animations \n\nhttps://hackernoon.com/animated-page-transitions-with-react-router-4-reacttransitiongroup-and-animated-1ca17bd97a1a\nhttp://animate.mhaagens.me/projects\nhttps://reacttraining.com/react-router/web/example/animated-transitions\nhttps://blog.logrocket.com/routes-animation-transitions-in-react-router-v4-9f4788deb964\nhttps://medium.com/@pshrmn/a-shallow-dive-into-react-router-v4-animated-transitions-4b73f634992a\nhttps://github.com/doctolib/react-router-transitions\n\n//React increasing performance\n\nhttps://medium.freecodecamp.org/how-to-crank-your-progressive-web-apps-google-lighthouse-score-up-to-100-cfc053eb7661\nhttps://medium.com/@addyosmani/progressive-web-apps-with-react-js-part-i-introduction-50679aef2b12\nhttps://medium.com/@addyosmani/progressive-web-apps-with-react-js-part-2-page-load-performance-33b932d97cf2\nhttps://medium.com/@addyosmani/progressive-web-apps-with-react-js-part-4-site-is-progressively-enhanced-b5ad7cf7a447\nhttps://blog.kentcdodds.com/introducing-downshift-for-react-b1de3fca0817\nhttps://medium.com/walmartlabs/building-react-js-at-enterprise-scale-17c17a36fd1f\nhttps://medium.com/walmartlabs\nhttps://medium.com/urbanclap-engineering\nhttps://medium.com/urbanclap-engineering/building-web-at-urbanclap-the-react-way-aa81d69f0ad9\nhttps://hackernoon.com/improving-first-time-load-of-a-production-react-app-part-1-of-2-e7494a7c7ab0\nhttps://www.upwork.com/hiring/development/11-tips-to-optimize-javascript-and-improve-website-loading-speeds/\nhttps://crypt.codemancers.com/posts/2016-09-16-react-server-side-rendering/\n\nhttps://medium.com/@antonybudianto/automate-your-create-react-app-build-on-heroku-using-buildpack-beb77408ffee\nhttps://medium.com/google-cloud/how-to-deploy-a-static-react-site-to-google-cloud-platform-55ff0bd0f509\n\n\n//TRY(IMPORTANT)\n\nhttps://www.gatsbyjs.org/docs/deploy-gatsby/\nhttps://zeit.co/now\nhttps://www.netlify.com/\nhttps://gohugo.io/\nhttps://www.meteor.com/?ref=producthunt\nhttps://nerv.aotu.io/?ref=producthunt\nhttps://github.com/oliviertassinari/SplitMe/blob/master/package.json\nhttps://pouchdb.com/\nhttps://github.com/oliviertassinari?tab=repositories\nhttps://mitch.works/\nhttp://ineedaresu.me/#/generate\n\n\n\n//Crypto-Resources\n\nhttps://www.kaggle.com/natehenderson/top-100-cryptocurrency-historical-data/data\nhttps://www.producthunt.com/e/crypto-projects-you-ll-love\nhttps://www.producthunt.com/\nhttps://bitcoin-price.com/?ref=producthunt\n\n\n//Others\n\nhttps://stories.uplabs.com/7-well-balanced-cards-layouts-2c097dbb16ae\n\nhttps://www.facebook.com/sharan.shetty.733/videos/1639065346136413/\n\n\n//React Router Stuffs\n\nhttps://medium.com/@pshrmn/a-simple-react-router-v4-tutorial-7f23ff27adf\nhttps://medium.com/@notrab/getting-started-with-create-react-app-redux-react-router-redux-thunk-d6a19259f71f\nhttps://medium.mybridge.co/react-js-top-10-articles-for-the-past-month-v-sep-2017-1894c4d91e0c\nhttps://hackernoon.com/debugging-react-like-a-champ-with-vscode-66281760037\nhttps://medium.com/@pshrmn/i-have-to-learn-another-router-d2a770e72c92",
 			"settings":
 			{
-				"buffer_size": 1447,
+				"buffer_size": 3437,
 				"line_ending": "Windows",
 				"name": "//React with backend server"
-			}
-		},
-		{
-			"file": "working codes.txt",
-			"settings":
-			{
-				"buffer_size": 5668,
-				"encoding": "UTF-8",
-				"line_ending": "Windows",
-				"name": "working codes"
-			}
-		},
-		{
-			"file": "src/helper.js",
-			"settings":
-			{
-				"buffer_size": 895,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
 			}
 		}
 	],
@@ -191,9 +221,17 @@
 	"command_palette":
 	{
 		"height": 392.0,
-		"last_filter": "packa",
+		"last_filter": "ins",
 		"selected_items":
 		[
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"jso",
+				"JSON Reindent: reindent file or selection"
+			],
 			[
 				"packa",
 				"Package Control: Remove Package"
@@ -203,7 +241,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 476.0
+		"width": 412.0
 	},
 	"console":
 	{
@@ -227,22 +265,45 @@
 	[
 		"/E/react-practice/react-ticker",
 		"/E/react-practice/react-ticker/src",
-		"/E/react-practice/react-ticker/src/Components",
-		"/E/react-practice/react-ticker-backup",
-		"/E/react-practice/react-ticker-backup/src",
-		"/E/react-practice/react-ticker-backup/src/Components"
+		"/E/react-practice/react-ticker/src/Components"
 	],
 	"file_history":
 	[
+		"/E/react-practice/react-ticker/src/Components/helpers/fetch.js",
+		"/E/react-practice/react-ticker/src/Components/helpers/case-conversions.js",
+		"/E/react-practice/react-ticker/src/helper.js",
+		"/E/react-practice/react-ticker/working codes.txt",
+		"/E/react-practice/react-ticker/public/index.html",
+		"/E/react-practice/react-ticker/src/Components/Common.css",
+		"/E/react-practice/react-ticker/src/Components/Header.js",
+		"/E/react-practice/react-ticker/src/Components/Toggle.js",
+		"/E/react-practice/react-ticker/app.yaml",
+		"/E/react-practice/react-ticker/src/App.css",
+		"/E/react-practice/react-ticker/src/Components/Toggle.css",
+		"/E/react-practice/react-ticker/src/Helpers/Helper.js",
+		"/E/react-practice/react-ticker/public/manifest.json",
+		"/E/react-practice/react-ticker/src/Components/Coins.css",
+		"/E/react-practice/react-ticker/src/Components/cryptocoins-colors.css",
+		"/E/react-practice/react-ticker/node_modules/react-cryptocoins/src/icons/NEO-alt.js",
+		"/E/react-practice/react-ticker/GAS-alt.js",
+		"/E/react-practice/react-ticker/GAS.js",
+		"/E/react-practice/react-ticker/node_modules/react-cryptocoins/src/icons/NEO.js",
+		"/E/react-practice/react-ticker/src/index.js",
+		"/E/react-practice/react-ticker/src/Components/Exchanges.js",
+		"/E/react-practice/react-ticker/node_modules/react-cryptocoins/src/index.js",
+		"/E/react-practice/react-ticker/src/Components/Footer.js",
+		"/E/react-practice/react-ticker/src/Ad.js",
+		"/E/react-practice/react-ticker/public/coins/webfont/cryptocoins.css",
+		"/E/react-practice/react-ticker/src/Components/PriceCardContainer.js",
+		"/E/react-practice/react-ticker/src/Components/PriceCard.css",
+		"/E/react-practice/react-ticker/node_modules/react-cryptocoins/src/icons/ADA.js",
+		"/E/react-practice/react-ticker/public/coins/webfont/cryptocoins-colors.css",
 		"/E/react-practice/react-ticker/src/App.js",
 		"/E/react-practice/react-ticker-backup/src/App.css",
 		"/E/react-practice/react-ticker-backup/src/App.test.js",
 		"/E/react-practice/react-ticker/package.json",
-		"/E/react-practice/react-ticker/public/manifest.json",
 		"/C/Users/Gaurav Agarwal/AppData/Roaming/Electroneum/electroneumpoolminer.vshost.exe.config",
 		"/C/Users/Gaurav Agarwal/AppData/Roaming/Electroneum/electroneumpoolminer.conf",
-		"/E/react-practice/react-ticker/src/Components/PriceCard.css",
-		"/E/react-practice/react-ticker/public/index.html",
 		"/E/react-practice/react-ticker/src/Components/PriceCard.js",
 		"/E/react-practice/react-udemy/reactStrap/react-strap/src/Components/Navbar.js",
 		"/E/react-practice/react-udemy/reactStrap/react-strap/src/App.js",
@@ -323,6 +384,62 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"heading",
+			" ",
+			"Xmr",
+			"className={classes.green}",
+			"absolute",
+			"className={classes",
+			"toCamelCase",
+			"RingLoader",
+			"cardData",
+			"styles",
+			"style",
+			"Button",
+			"-",
+			"NeoAlt",
+			"Neo",
+			"str",
+			"</b>",
+			"<b>",
+			"h5",
+			"h4",
+			"h3",
+			"prefix={'₹'}",
+			"256",
+			"new",
+			"25",
+			"20",
+			"45",
+			"cd",
+			"name",
+			"Bch",
+			"Xrp",
+			"Ltc",
+			"Btc",
+			"Eth",
+			"data",
+			"var",
+			"Avatar",
+			".",
+			"var",
+			"SpecificStory",
+			"cd",
+			"eth",
+			"cardData",
+			"md={4}",
+			"Header",
+			"AppBar",
+			"Header",
+			"<br/>",
+			"<Divider inset />",
+			"24",
+			"<Avatar aria-label=\"Recipe\" alt={cardData.coin} src={cardData.coin_path} style={styles.smallAvatar} />",
+			"50",
+			"60",
+			"Coins",
+			"PriceCardContainer",
+			"Toggle",
 			"checkedA",
 			"B",
 			"PriceCardContainer",
@@ -410,55 +527,24 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 9,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "src/Components/PriceCardContainer.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 691,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								523,
-								523
-							]
-						],
-						"settings":
-						{
-							"open_with_edit": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "src/App.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1368,
+						"buffer_size": 1398,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								799,
-								799
+								866,
+								866
 							]
 						],
 						"settings":
@@ -466,63 +552,6 @@
 							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 240.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "src/Components/Toggle.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1248,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								445,
-								445
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 240.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "src/Components/Toggle.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 40,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								21,
-								27
-							]
-						],
-						"settings":
-						{
-							"open_with_edit": true,
-							"syntax": "Packages/CSS/CSS.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -532,25 +561,53 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "src/App.css",
+					"buffer": 1,
+					"file": "src/index.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 190,
+						"buffer_size": 99,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								190,
-								190
+								99,
+								99
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/Components/Exchanges.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5063,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								210,
+								210
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
@@ -558,24 +615,52 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "src/Components/Header.js",
+					"buffer": 3,
+					"file": "src/Components/cryptocoins-colors.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 428,
+						"buffer_size": 3482,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								41,
-								41
+								2659,
+								2659
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1248.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/Components/Coins.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5014,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2159,
+								2159
 							]
 						],
 						"settings":
@@ -586,33 +671,60 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1111.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"semi_transient": false,
+					"buffer": 5,
+					"file": "src/Components/Common.css",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 3391,
+						"buffer_size": 155,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								86,
-								86
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"auto_name": "#Koinex :",
-							"default_dir": "E:\\react-practice\\react-ticker",
-							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/Components/helpers/case-conversions.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 827,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								800,
+								800
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
@@ -628,15 +740,75 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1447,
+						"buffer_size": 955,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								847,
-								847
+								560,
+								560
+							]
+						],
+						"settings":
+						{
+							"auto_name": "#New changes",
+							"default_dir": "E:\\react-practice\\react-ticker",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1416,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1416,
+								1416
+							]
+						],
+						"settings":
+						{
+							"auto_name": "#Koinex :",
+							"default_dir": "E:\\react-practice\\react-ticker",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 416.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3437,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2200,
+								2200
 							]
 						],
 						"settings":
@@ -646,71 +818,10 @@
 							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 120.0,
+						"translation.y": 104.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "working codes.txt",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5668,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3461,
-								3461
-							]
-						],
-						"settings":
-						{
-							"auto_name": "working codes",
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "src/helper.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 895,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								248,
-								248
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -718,11 +829,11 @@
 	],
 	"incremental_find":
 	{
-		"height": 23.0
+		"height": 21.0
 	},
 	"input":
 	{
-		"height": 208.0
+		"height": 35.0
 	},
 	"layout":
 	{
@@ -797,7 +908,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 231.0,
+	"side_bar_width": 271.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

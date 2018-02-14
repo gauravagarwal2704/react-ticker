@@ -10,7 +10,8 @@ import Avatar from 'material-ui/Avatar';
 import Divider from 'material-ui/Divider';
 import NumberFormat from 'react-number-format';
 import { SyncLoader } from 'react-spinners';
-import { Btc, Eth, Bch, Ltc, Xmr,/* Iota, Gnt,*/ Omg, Etc, Neo, Zec, Dash, Btg, /*Gas,*/  Xrp, Qtum, Str } from 'react-cryptocoins';
+// import { Btc, Eth, Bch, Ltc, Xmr,/* Iota, Gnt,*/ Omg, Etc, Neo, Zec, Dash, Btg, /*Gas,*/  Xrp, Qtum, Str, Dgb,Sia,Vox,Xvg } from 'react-cryptocoins';
+import * as Icon from 'react-cryptocoins';
 import './cryptocoins-colors.css';
 import './Common.css';
 
@@ -66,31 +67,53 @@ coinType=(coin)=>{
   let Coins = toCamelCase(coin);
   // console.log(Coins);
   let components = {
-        Btc:Btc,
-        Bcc:Bch,
-        Bch:Bch,
-        Btg:Bch,
-        Dash:Dash,
-        Etc:Etc,
-        Eth:Eth,
-        Gas:Neo,
-        Ltc:Ltc,
-        Neo:Neo,
-        Omg:Omg,
-        Qtum:Qtum,
-        Xlm:Str,
-        Xmr:Xmr,
-        Xrp:Xrp,
-        Zec:Zec
+        Btc:Icon.Btc,
+        Bcc:Icon.Bch,
+        Bch:Icon.Bch,
+        Btg:Icon.Bch,
+        Dash:Icon.Dash,
+        Etc:Icon.Etc,
+        Eth:Icon.Eth,
+        Gas:Icon.Neo,
+        Ltc:Icon.Ltc,
+        Neo:Icon.Neo,
+        Omg:Icon.Omg,
+        Qtum:Icon.Qtum,
+        Xlm:Icon.Str,
+        Xmr:Icon.Xmr,
+        Xrp:Icon.Xrp,
+        Zec:Icon.Zec,
+        Dgb:Icon.Dgb,
+        Sc:Icon.Sia,
+        Vox:Icon.Xvg,
+        Xvg:Icon.Xvg,
   };
+  // console.log(Icon.Btc);
+  // let components = {
+  //   [Coins] : Icon.Coins
+  // }
+  // console.log(components)
+
   let MyCoin = components[Coins];
-  return <MyCoin className={Coins} size={28}>{Coins}</MyCoin>;
+  return <MyCoin className={MyCoin.name} size={28}>{Coins}</MyCoin>;
 }
+
+  sortExchange(a, b){
+          if(a.prices.length == b.prices.length) {
+              return 0;
+          }
+          else if(a.prices.length < b.prices.length) {
+              return -1;
+          } else {
+              return 1;
+          }
+      }
 
 
   render() {
     const { classes } = this.props;
     if(this.props.dataFromApp){
+      // const api = this.props.dataFromApp.sort(this.sortExchange);
       var cards = this.props.dataFromApp.map((cd)=>{
         return <Grid item xs={12} sm={6} md={3} lg={3} key={cd.name}>
                   <Card>
