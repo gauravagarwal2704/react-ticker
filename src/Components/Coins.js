@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import Grid from 'material-ui/Grid';
-import {toUpperCase, toCamelCase, toDisplayName} from './helpers/case-conversions';
+import {toUpperCase, toCamelCase, toDisplayName, coinType} from './helpers/case-conversions';
 import Card, { CardContent, CardHeader } from 'material-ui/Card';
 import Typography from 'material-ui/Typography';
 import Avatar from 'material-ui/Avatar';
 import Divider from 'material-ui/Divider';
 import NumberFormat from 'react-number-format';
-import { Btc, Eth, Bch, Ltc, Xmr,/* Iota, Gnt,*/ Omg, Etc, Neo, Zec, Dash, Btg, /*Gas,*/  Xrp, Qtum, Str } from 'react-cryptocoins';
+// import { Btc, Eth, Bch, Ltc, Xmr,/* Iota, Gnt,*/ Omg, Etc, Neo, Zec, Dash, Btg, /*Gas,*/  Xrp, Qtum, Str } from 'react-cryptocoins';
 import './cryptocoins-colors.css';
 import './Coins.css';
 
@@ -55,32 +55,6 @@ class Coins extends Component {
     }
   }
 
-
-coinType=(coin)=>{
-  let Coins = toCamelCase(coin);
-  // console.log(Coins);
-  let components = {
-        Btc:Btc,
-        Bcc:Bch,
-        Bch:Bch,
-        Btg:Bch,
-        Dash:Dash,
-        Etc:Etc,
-        Eth:Eth,
-        Gas:Neo,
-        Ltc:Ltc,
-        Neo:Neo,
-        Omg:Omg,
-        Qtum:Qtum,
-        Xlm:Str,
-        Xmr:Xmr,
-        Xrp:Xrp,
-        Zec:Zec
-  };
-  let MyCoin = components[Coins];
-  return <MyCoin className={Coins} size={30}>{Coins}</MyCoin>;
-}
-
 render() {
  var coinNames = new Set();
  var coinSymbols = new Set();
@@ -105,7 +79,7 @@ render() {
                                   </Typography>
                                 }
                           avatar={
-                                  this.coinType(finalCoins[i])
+                                  coinType(finalCoins[i])
                                   
                                 }
                         />

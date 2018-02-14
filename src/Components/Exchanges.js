@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { withStyles } from 'material-ui/styles';
 import PropTypes from 'prop-types';
 import Grid from 'material-ui/Grid';
-import {toUpperCase, toCamelCase, toDisplayName} from './helpers/case-conversions';
+import {toUpperCase, toCamelCase, toDisplayName, coinType} from './helpers/case-conversions';
 import Card, { CardContent, CardHeader } from 'material-ui/Card';
 import Tooltip from 'material-ui/Tooltip';
 import Typography from 'material-ui/Typography';
@@ -11,7 +11,6 @@ import Divider from 'material-ui/Divider';
 import NumberFormat from 'react-number-format';
 import { SyncLoader } from 'react-spinners';
 // import { Btc, Eth, Bch, Ltc, Xmr,/* Iota, Gnt,*/ Omg, Etc, Neo, Zec, Dash, Btg, /*Gas,*/  Xrp, Qtum, Str, Dgb,Sia,Vox,Xvg } from 'react-cryptocoins';
-import * as Icon from 'react-cryptocoins';
 import './cryptocoins-colors.css';
 import './Common.css';
 
@@ -62,41 +61,6 @@ class Exchanges extends Component {
       loading:true
     }
   }
-
-coinType=(coin)=>{
-  let Coins = toCamelCase(coin);
-  // console.log(Coins);
-  let components = {
-        Btc:Icon.Btc,
-        Bcc:Icon.Bch,
-        Bch:Icon.Bch,
-        Btg:Icon.Bch,
-        Dash:Icon.Dash,
-        Etc:Icon.Etc,
-        Eth:Icon.Eth,
-        Gas:Icon.Neo,
-        Ltc:Icon.Ltc,
-        Neo:Icon.Neo,
-        Omg:Icon.Omg,
-        Qtum:Icon.Qtum,
-        Xlm:Icon.Str,
-        Xmr:Icon.Xmr,
-        Xrp:Icon.Xrp,
-        Zec:Icon.Zec,
-        Dgb:Icon.Dgb,
-        Sc:Icon.Sia,
-        Vox:Icon.Xvg,
-        Xvg:Icon.Xvg,
-  };
-  // console.log(Icon.Btc);
-  // let components = {
-  //   [Coins] : Icon.Coins
-  // }
-  // console.log(components)
-
-  let MyCoin = components[Coins];
-  return <MyCoin className={MyCoin.name} size={28}>{Coins}</MyCoin>;
-}
 
   sortExchange(a, b){
           if(a.prices.length == b.prices.length) {
@@ -150,7 +114,7 @@ coinType=(coin)=>{
                         
                         <span>
                           <Tooltip id="tooltip-right" title={toDisplayName(p.name)}  placement="right" disableTriggerTouch>
-                            <span>{this.coinType(p.name)}</span>
+                            <span>{coinType(p.name)}</span>
                           </Tooltip>                          
                         </span>
                       </div>
