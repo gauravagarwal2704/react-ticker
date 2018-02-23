@@ -6,12 +6,13 @@ import Header from './Components/Header';
 import Toggle from './Components/Toggle';
 import Coins from './Components/Coins';
 import Exchanges from './Components/Exchanges';
-import {blue, red} from 'material-ui/colors';
+import {blue} from 'material-ui/colors';
 import './App.css';
 
 const theme = createMuiTheme({
 palette: {
   primary: blue,
+  secondary: blue
 },
 });
 
@@ -25,7 +26,7 @@ class App extends Component {
   }
 
   handleChoice=(toggleChoice)=>{
-    console.log('isCoin', toggleChoice);
+    // console.log('isCoin', toggleChoice);
     this.setState({
       isCoin:toggleChoice
     })

@@ -4,7 +4,7 @@ const api = {
   fetchPrices:()=>{
         return axios.get('https://trackcrpto.herokuapp.com/v1/prices')
         .then(response => {
-          console.log('response:',response.data);
+          // console.log('response:',response.data);
           return response.data;
         })
         .catch(error => {

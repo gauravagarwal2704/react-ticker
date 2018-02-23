@@ -29,8 +29,8 @@ state = {
   handleChange = name => (event, checked) => {
     this.setState({ [name]: checked });
     this.props.handleChoice(this.state.isCoin);
-    console.log('in change');
-    console.log(this.state)
+    // console.log('in change');
+    // console.log(this.state)
   };
 
 render() {

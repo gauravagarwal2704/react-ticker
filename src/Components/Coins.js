@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Grid from 'material-ui/Grid';
-import {toUpperCase, toCamelCase, toDisplayName, coinType} from './helpers/case-conversions';
+import { toDisplayName, coinType} from './helpers/case-conversions';
 import Card, { CardContent, CardHeader } from 'material-ui/Card';
 import Typography from 'material-ui/Typography';
 import Avatar from 'material-ui/Avatar';
@@ -63,15 +63,15 @@ render() {
       var cards = this.props.dataFromApp.map(o => {
     o.prices.map(c => coinNames.add(c.name))
     o.prices.map(s=> coinSymbols.add(s.symbol))
+    return null;
   })
    var finalCoins = [...coinNames];
    // var finalSymbols = [...coinSymbols];
    // console.log(finalSymbols);
   cards = finalCoins.map((cn, i) => {
     return <Grid item xs={12} sm={6} md={3} lg={3} key={cn}>
-                    <Card key={cn}>
+                    <Card>
                       <div>
-                      <span></span>
                         <CardHeader
                           title={
                                   <Typography component="p">
@@ -85,11 +85,11 @@ render() {
                         />
                         <Divider />
                       </div>
-           <CardContent key={cn}>
-                    <div style={styles.c_container} key={cn}>
-                      <div key={cn}>
+           <CardContent>
+                    <div style={styles.c_container}>
+                      <div>
                       </div>
-                      <div key={i}>
+                      <div>
                         <Typography component="p">
                           <span className="prices" style={styles.heading}><i>Buy &nbsp;&nbsp;</i> |&nbsp;&nbsp; <i>Sell</i></span>
                         </Typography>
@@ -100,7 +100,7 @@ render() {
               this.props.dataFromApp.map(o => o.prices.map(p => {
                 if (p.name === cn) {
                   //console.log(`${o.name} | ${p.buy} | ${p.sell}`)
-                  return <div key={p.symbol}>
+                  return <div key={p.name}>
                       <div style={styles.c_container} >
                       <div>
                         <Avatar aria-label="Exchanges"
@@ -123,7 +123,9 @@ render() {
                     <Divider inset />
                     </div>
                     }
-              }))
+                    return null;
+              })
+              )
             }
                     </CardContent>
                 

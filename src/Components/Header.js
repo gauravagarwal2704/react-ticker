@@ -6,7 +6,7 @@ import Typography from 'material-ui/Typography';
 const Header = () => (
       <AppBar position="static">
         <Toolbar>
-          <Typography type="title" color="inherit" className=''>
+          <Typography variant="title" type="title" color="inherit">
             CryptoTracker
           </Typography>
         </Toolbar>

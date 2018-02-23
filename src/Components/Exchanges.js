@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { withStyles } from 'material-ui/styles';
 import PropTypes from 'prop-types';
 import Grid from 'material-ui/Grid';
-import {toUpperCase, toCamelCase, toDisplayName, coinType} from './helpers/case-conversions';
+import { toCamelCase, toDisplayName, coinType} from './helpers/case-conversions';
 import Card, { CardContent, CardHeader } from 'material-ui/Card';
 import Tooltip from 'material-ui/Tooltip';
 import Typography from 'material-ui/Typography';
@@ -21,8 +21,8 @@ const styles = theme => ({
   },
  
   bigAvatar: {
-    width: 45,
-    height: 45,
+    width: 32,
+    height: 32,
   },
   smallAvatar: {
     width: 45,
@@ -63,7 +63,7 @@ class Exchanges extends Component {
   }
 
   sortExchange(a, b){
-          if(a.prices.length == b.prices.length) {
+          if(a.prices.length === b.prices.length) {
               return 0;
           }
           else if(a.prices.length < b.prices.length) {
@@ -89,7 +89,7 @@ class Exchanges extends Component {
                       avatar= {
                                 <Avatar aria-label="Exchanges"
                                 alt={cd.name}
-                                src={cd.image}
+                                src={"/"+cd.image}
                                 className={classes.bigAvatar}
                                 />
                               }
