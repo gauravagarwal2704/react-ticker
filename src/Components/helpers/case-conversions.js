@@ -33,7 +33,8 @@ export function toDisplayName (coin){
         'Dgb':'DigiByte',
         'Sc':'Sia Coin',
         'Vox':'Voxelus',
-        'Xvg':'Verge'
+        'Xvg':'Verge',
+        'Req': 'Request Network'
   }
   let camel = toCamelCase(coin);
   let converted = coinNames[camel] + " ("+toUpperCase(coin)+")";
@@ -65,6 +66,7 @@ export function coinType(coin){
         Sc:Icon.Sia,
         Vox:Icon.Xvg,
         Xvg:Icon.Xvg,
+        Req:Icon.Rby,
   };
   // console.log(Icon.Btc);
   // let components = {

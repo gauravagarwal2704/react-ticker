@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"rcc",
+				"rcc\tReact: legacy component"
+			],
+			[
 				"to",
 				"toUpperCase"
 			],
@@ -133,19 +137,37 @@
 			}
 		},
 		{
-			"file": "src/index.css",
+			"file": "src/Components/helpers/case-conversions.js",
 			"settings":
 			{
-				"buffer_size": 99,
+				"buffer_size": 1770,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "src/Components/Exchanges.js",
 			"settings":
 			{
-				"buffer_size": 5063,
+				"buffer_size": 4927,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/Components/Footer.js",
+			"settings":
+			{
+				"buffer_size": 314,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/Components/Coins.js",
+			"settings":
+			{
+				"buffer_size": 4543,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -157,32 +179,6 @@
 				"buffer_size": 3482,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Components/Coins.js",
-			"settings":
-			{
-				"buffer_size": 5014,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/Components/Common.css",
-			"settings":
-			{
-				"buffer_size": 155,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/Components/helpers/case-conversions.js",
-			"settings":
-			{
-				"buffer_size": 827,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
 			}
 		},
 		{
@@ -204,10 +200,10 @@
 			}
 		},
 		{
-			"contents": "//React with backend server\n\nhttps://medium.freecodecamp.org/how-to-make-create-react-app-work-with-a-node-backend-api-7c5c48acb1b0\nhttps://hackernoon.com/how-to-combine-a-nodejs-back-end-with-a-reactjs-front-end-app-ea9b24715032\nhttps://www.fullstackreact.com/articles/using-create-react-app-with-a-server/\nhttps://scotch.io/tutorials/react-on-the-server-for-beginners-build-a-universal-react-and-node-app\n\n//React with amazing Animations \n\nhttps://hackernoon.com/animated-page-transitions-with-react-router-4-reacttransitiongroup-and-animated-1ca17bd97a1a\nhttp://animate.mhaagens.me/projects\nhttps://reacttraining.com/react-router/web/example/animated-transitions\nhttps://blog.logrocket.com/routes-animation-transitions-in-react-router-v4-9f4788deb964\nhttps://medium.com/@pshrmn/a-shallow-dive-into-react-router-v4-animated-transitions-4b73f634992a\nhttps://github.com/doctolib/react-router-transitions\n\n//React increasing performance\n\nhttps://medium.freecodecamp.org/how-to-crank-your-progressive-web-apps-google-lighthouse-score-up-to-100-cfc053eb7661\nhttps://medium.com/@addyosmani/progressive-web-apps-with-react-js-part-i-introduction-50679aef2b12\nhttps://medium.com/@addyosmani/progressive-web-apps-with-react-js-part-2-page-load-performance-33b932d97cf2\nhttps://medium.com/@addyosmani/progressive-web-apps-with-react-js-part-4-site-is-progressively-enhanced-b5ad7cf7a447\nhttps://blog.kentcdodds.com/introducing-downshift-for-react-b1de3fca0817\nhttps://medium.com/walmartlabs/building-react-js-at-enterprise-scale-17c17a36fd1f\nhttps://medium.com/walmartlabs\nhttps://medium.com/urbanclap-engineering\nhttps://medium.com/urbanclap-engineering/building-web-at-urbanclap-the-react-way-aa81d69f0ad9\nhttps://hackernoon.com/improving-first-time-load-of-a-production-react-app-part-1-of-2-e7494a7c7ab0\nhttps://www.upwork.com/hiring/development/11-tips-to-optimize-javascript-and-improve-website-loading-speeds/\nhttps://crypt.codemancers.com/posts/2016-09-16-react-server-side-rendering/\n\nhttps://medium.com/@antonybudianto/automate-your-create-react-app-build-on-heroku-using-buildpack-beb77408ffee\nhttps://medium.com/google-cloud/how-to-deploy-a-static-react-site-to-google-cloud-platform-55ff0bd0f509\n\n\n//TRY(IMPORTANT)\n\nhttps://www.gatsbyjs.org/docs/deploy-gatsby/\nhttps://zeit.co/now\nhttps://www.netlify.com/\nhttps://gohugo.io/\nhttps://www.meteor.com/?ref=producthunt\nhttps://nerv.aotu.io/?ref=producthunt\nhttps://github.com/oliviertassinari/SplitMe/blob/master/package.json\nhttps://pouchdb.com/\nhttps://github.com/oliviertassinari?tab=repositories\nhttps://mitch.works/\nhttp://ineedaresu.me/#/generate\n\n\n\n//Crypto-Resources\n\nhttps://www.kaggle.com/natehenderson/top-100-cryptocurrency-historical-data/data\nhttps://www.producthunt.com/e/crypto-projects-you-ll-love\nhttps://www.producthunt.com/\nhttps://bitcoin-price.com/?ref=producthunt\n\n\n//Others\n\nhttps://stories.uplabs.com/7-well-balanced-cards-layouts-2c097dbb16ae\n\nhttps://www.facebook.com/sharan.shetty.733/videos/1639065346136413/\n\n\n//React Router Stuffs\n\nhttps://medium.com/@pshrmn/a-simple-react-router-v4-tutorial-7f23ff27adf\nhttps://medium.com/@notrab/getting-started-with-create-react-app-redux-react-router-redux-thunk-d6a19259f71f\nhttps://medium.mybridge.co/react-js-top-10-articles-for-the-past-month-v-sep-2017-1894c4d91e0c\nhttps://hackernoon.com/debugging-react-like-a-champ-with-vscode-66281760037\nhttps://medium.com/@pshrmn/i-have-to-learn-another-router-d2a770e72c92",
+			"contents": "//React with backend server\n\nhttps://medium.freecodecamp.org/how-to-make-create-react-app-work-with-a-node-backend-api-7c5c48acb1b0\nhttps://hackernoon.com/how-to-combine-a-nodejs-back-end-with-a-reactjs-front-end-app-ea9b24715032\nhttps://www.fullstackreact.com/articles/using-create-react-app-with-a-server/\nhttps://scotch.io/tutorials/react-on-the-server-for-beginners-build-a-universal-react-and-node-app\n\n//React with amazing Animations \n\nhttps://hackernoon.com/animated-page-transitions-with-react-router-4-reacttransitiongroup-and-animated-1ca17bd97a1a\nhttp://animate.mhaagens.me/projects\nhttps://reacttraining.com/react-router/web/example/animated-transitions\nhttps://blog.logrocket.com/routes-animation-transitions-in-react-router-v4-9f4788deb964\nhttps://medium.com/@pshrmn/a-shallow-dive-into-react-router-v4-animated-transitions-4b73f634992a\nhttps://github.com/doctolib/react-router-transitions\n\n//React increasing performance\n\nhttps://medium.freecodecamp.org/how-to-crank-your-progressive-web-apps-google-lighthouse-score-up-to-100-cfc053eb7661\nhttps://medium.com/@addyosmani/progressive-web-apps-with-react-js-part-i-introduction-50679aef2b12\nhttps://medium.com/@addyosmani/progressive-web-apps-with-react-js-part-2-page-load-performance-33b932d97cf2\nhttps://medium.com/@addyosmani/progressive-web-apps-with-react-js-part-4-site-is-progressively-enhanced-b5ad7cf7a447\nhttps://blog.kentcdodds.com/introducing-downshift-for-react-b1de3fca0817\nhttps://medium.com/walmartlabs/building-react-js-at-enterprise-scale-17c17a36fd1f\nhttps://medium.com/walmartlabs\nhttps://medium.com/urbanclap-engineering\nhttps://medium.com/urbanclap-engineering/building-web-at-urbanclap-the-react-way-aa81d69f0ad9\nhttps://hackernoon.com/improving-first-time-load-of-a-production-react-app-part-1-of-2-e7494a7c7ab0\nhttps://www.upwork.com/hiring/development/11-tips-to-optimize-javascript-and-improve-website-loading-speeds/\nhttps://crypt.codemancers.com/posts/2016-09-16-react-server-side-rendering/\n\nhttps://medium.com/@antonybudianto/automate-your-create-react-app-build-on-heroku-using-buildpack-beb77408ffee\nhttps://medium.com/google-cloud/how-to-deploy-a-static-react-site-to-google-cloud-platform-55ff0bd0f509\n\n\n//TRY(IMPORTANT)\n\nhttps://www.gatsbyjs.org/docs/deploy-gatsby/\nhttps://zeit.co/now\nhttps://www.netlify.com/\nhttps://gohugo.io/\nhttps://www.meteor.com/?ref=producthunt\nhttps://nerv.aotu.io/?ref=producthunt\nhttps://github.com/oliviertassinari/SplitMe/blob/master/package.json\nhttps://pouchdb.com/\nhttps://github.com/oliviertassinari?tab=repositories\nhttps://mitch.works/\nhttp://ineedaresu.me/#/generate\nhttps://sweetalert2.github.io/#download\nhttp://riotjs.com/\n\n\n\n\n//Crypto-Resources\n\nhttps://www.kaggle.com/natehenderson/top-100-cryptocurrency-historical-data/data\nhttps://www.producthunt.com/e/crypto-projects-you-ll-love\nhttps://www.producthunt.com/\nhttps://bitcoin-price.com/?ref=producthunt\n\n\n//Others\n\nhttps://stories.uplabs.com/7-well-balanced-cards-layouts-2c097dbb16ae\n\nhttps://www.facebook.com/sharan.shetty.733/videos/1639065346136413/\n\n\n//React Router Stuffs\n\nhttps://medium.com/@pshrmn/a-simple-react-router-v4-tutorial-7f23ff27adf\nhttps://medium.com/@notrab/getting-started-with-create-react-app-redux-react-router-redux-thunk-d6a19259f71f\nhttps://medium.mybridge.co/react-js-top-10-articles-for-the-past-month-v-sep-2017-1894c4d91e0c\nhttps://hackernoon.com/debugging-react-like-a-champ-with-vscode-66281760037\nhttps://medium.com/@pshrmn/i-have-to-learn-another-router-d2a770e72c92",
 			"settings":
 			{
-				"buffer_size": 3437,
+				"buffer_size": 3497,
 				"line_ending": "Windows",
 				"name": "//React with backend server"
 			}
@@ -221,9 +217,29 @@
 	"command_palette":
 	{
 		"height": 392.0,
-		"last_filter": "ins",
+		"last_filter": "in",
 		"selected_items":
 		[
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"react",
+				"Snippet: React: wrap in a component"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
 			[
 				"ins",
 				"Package Control: Install Package"
@@ -235,19 +251,19 @@
 			[
 				"packa",
 				"Package Control: Remove Package"
-			],
-			[
-				"insta",
-				"Package Control: Install Package"
 			]
 		],
-		"width": 412.0
+		"width": 428.0
 	},
 	"console":
 	{
-		"height": 54.0,
+		"height": 393.0,
 		"history":
 		[
+			"npm start",
+			"clear",
+			"cls",
+			"npm -v",
 			"npm start",
 			"import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
 		]
@@ -265,10 +281,19 @@
 	[
 		"/E/react-practice/react-ticker",
 		"/E/react-practice/react-ticker/src",
-		"/E/react-practice/react-ticker/src/Components"
+		"/E/react-practice/react-ticker/src/Components",
+		"/E/react-practice/react-ticker/src/Components/helpers"
 	],
 	"file_history":
 	[
+		"/C/Users/Gaurav Agarwal/AppData/Roaming/Sublime Text 3/Packages/Emmet/Default (Windows).sublime-keymap",
+		"/C/Users/Gaurav Agarwal/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/Gaurav Agarwal/AppData/Roaming/Sublime Text 3/Packages/Emmet/Emmet.sublime-settings",
+		"/C/Users/Gaurav Agarwal/AppData/Roaming/Sublime Text 3/Packages/Babel/Babel.sublime-settings",
+		"/E/react-practice/react-ticker/package.json",
+		"/E/react-practice/react-ticker/.eslintrc.json",
+		"/C/Users/Gaurav Agarwal/AppData/Roaming/Sublime Text 3/Packages/ESLint/ESLint.sublime-settings",
+		"/E/react-practice/react-ticker/src/index.css",
 		"/E/react-practice/react-ticker/src/Components/helpers/fetch.js",
 		"/E/react-practice/react-ticker/src/Components/helpers/case-conversions.js",
 		"/E/react-practice/react-ticker/src/helper.js",
@@ -301,7 +326,6 @@
 		"/E/react-practice/react-ticker/src/App.js",
 		"/E/react-practice/react-ticker-backup/src/App.css",
 		"/E/react-practice/react-ticker-backup/src/App.test.js",
-		"/E/react-practice/react-ticker/package.json",
 		"/C/Users/Gaurav Agarwal/AppData/Roaming/Electroneum/electroneumpoolminer.vshost.exe.config",
 		"/C/Users/Gaurav Agarwal/AppData/Roaming/Electroneum/electroneumpoolminer.conf",
 		"/E/react-practice/react-ticker/src/Components/PriceCard.js",
@@ -370,7 +394,7 @@
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 40.0
 	},
 	"find_in_files":
 	{
@@ -384,6 +408,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"1",
+			"elements",
+			":",
+			"Sc",
 			"heading",
 			" ",
 			"Xmr",
@@ -507,9 +535,7 @@
 			"Header",
 			"tb_eth",
 			"  \n",
-			"tb_btc",
-			"zebpay",
-			"[]"
+			"tb_btc"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -527,7 +553,7 @@
 	"groups":
 	[
 		{
-			"selected": 9,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -543,8 +569,8 @@
 						"selection":
 						[
 							[
-								866,
-								866
+								0,
+								1398
 							]
 						],
 						"settings":
@@ -552,34 +578,6 @@
 							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/index.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 99,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								99,
-								99
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -589,101 +587,12 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "src/Components/Exchanges.js",
+					"buffer": 1,
+					"file": "src/Components/helpers/case-conversions.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5063,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								210,
-								210
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "src/Components/cryptocoins-colors.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3482,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2659,
-								2659
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 1248.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "src/Components/Coins.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5014,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2159,
-								2159
-							]
-						],
-						"settings":
-						{
-							"open_with_edit": true,
-							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1111.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "src/Components/Common.css",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 155,
+						"buffer_size": 1770,
 						"regions":
 						{
 						},
@@ -691,35 +600,7 @@
 						[
 							[
 								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "src/Components/helpers/case-conversions.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 827,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								800,
-								800
+								1770
 							]
 						],
 						"settings":
@@ -732,11 +613,128 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 2,
+					"file": "src/Components/Exchanges.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4927,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1469,
+								1469
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 617.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/Components/Footer.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 314,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								173,
+								173
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/Components/Coins.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4543,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1610,
+								1610
+							]
+						],
+						"settings":
+						{
+							"open_with_edit": true,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 624.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/Components/cryptocoins-colors.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3482,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2047,
+								2047
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 786.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
 					"semi_transient": false,
 					"settings":
 					{
@@ -761,11 +759,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 7,
 					"semi_transient": false,
 					"settings":
 					{
@@ -792,23 +790,23 @@
 						"translation.y": 416.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 8,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3437,
+						"buffer_size": 3497,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2200,
-								2200
+								2663,
+								2663
 							]
 						],
 						"settings":
@@ -818,10 +816,10 @@
 							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 104.0,
+						"translation.y": 52.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -858,6 +856,10 @@
 		]
 	},
 	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 66.0
+	},
 	"output.find_results":
 	{
 		"height": 0.0

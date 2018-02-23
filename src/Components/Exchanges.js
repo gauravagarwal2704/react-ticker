@@ -10,7 +10,7 @@ import Avatar from 'material-ui/Avatar';
 import Divider from 'material-ui/Divider';
 import NumberFormat from 'react-number-format';
 import { SyncLoader } from 'react-spinners';
-// import { Btc, Eth, Bch, Ltc, Xmr,/* Iota, Gnt,*/ Omg, Etc, Neo, Zec, Dash, Btg, /*Gas,*/  Xrp, Qtum, Str, Dgb,Sia,Vox,Xvg } from 'react-cryptocoins';
+// import { Btc, Eth, Bch, Ltc, Xmr,/* Iota,*/ Omg, Etc, Neo, Zec, Dash, Btg, /*Gas,*/  Xrp, Qtum, Str, Dgb,Sia,Vox,Xvg } from 'react-cryptocoins';
 import './cryptocoins-colors.css';
 import './Common.css';
 
