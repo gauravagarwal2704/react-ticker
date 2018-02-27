@@ -36,7 +36,8 @@ export function toDisplayName (coin){
         'Xvg':'Verge',
         'Req': 'Request Network',
         'Dbc': 'DeepBrain Chain',
-        'Rpx': 'Red Pulse'
+        'Rpx': 'Red Pulse',
+	'Zrx': '0x'
   }
   let camel = toCamelCase(coin);
   let converted = coinNames[camel] + " ("+toUpperCase(coin)+")";
@@ -66,11 +67,12 @@ export function coinType(coin){
         Zec:Icon.Zec,
         Dgb:Icon.Dgb,
         Sc:Icon.Sia,
-        Vox:Icon.Xvg, //wrong
+        Vox:Icon.Eth, //wrong
         Xvg:Icon.Xvg,
         Req:Icon.Rby, //wrong
         Dbc:Icon.Neo, //wrong
         Rpx:Icon.Qtum //wrong
+	Zrx:Icon.Xvg
   };
   // console.log(Icon.Btc);
   // let components = {
