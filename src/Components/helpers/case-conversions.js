@@ -71,7 +71,7 @@ export function coinType(coin){
         Xvg:Icon.Xvg,
         Req:Icon.Rby, //wrong
         Dbc:Icon.Neo, //wrong
-        Rpx:Icon.Qtum //wrong
+        Rpx:Icon.Qtum, //wrong
 	Zrx:Icon.Xvg
   };
   // console.log(Icon.Btc);
