@@ -69,10 +69,10 @@ export function coinType(coin){
         Sc:Icon.Sia,
         Vox:Icon.Eth, //wrong
         Xvg:Icon.Xvg,
-        Req:Icon.Rby, //wrong
+        Req:Icon.Eth, //wrong
         Dbc:Icon.Neo, //wrong
         Rpx:Icon.Qtum, //wrong
-	Zrx:Icon.Xvg
+	Zrx:Icon.Xrp
   };
   // console.log(Icon.Btc);
   // let components = {
