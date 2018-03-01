@@ -60,6 +60,7 @@ export function coinType(coin){
 			Dbc:Icon.Neo, //wrong
 			Rpx:Icon.Qtum, //wrong
 			Zrx:Icon.Xrp,//wrong
+	  		Ae:Icon.Amp,//wrong
 			Adc : Icon.Adc,
 			Aeon : Icon.Aeon,
 			Amp : Icon.Amp,
