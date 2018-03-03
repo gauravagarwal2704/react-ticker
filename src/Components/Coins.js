@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Grid from 'material-ui/Grid';
-import { toDisplayName, coinType} from './helpers/case-conversions';
+import { coinType} from './helpers/case-conversions';
+import { toDisplayName} from './helpers/coinData';
 import Card, { CardContent, CardHeader } from 'material-ui/Card';
 import Typography from 'material-ui/Typography';
 import Avatar from 'material-ui/Avatar';
@@ -69,6 +70,7 @@ render() {
    // var finalSymbols = [...coinSymbols];
    // console.log(finalSymbols);
   cards = finalCoins.map((cn, i) => {
+    console.log(cn)
     return <Grid item xs={12} sm={6} md={3} lg={3} key={cn}>
                     <Card>
                       <div>

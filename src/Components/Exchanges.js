@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import { withStyles } from 'material-ui/styles';
 import PropTypes from 'prop-types';
 import Grid from 'material-ui/Grid';
-import { toCamelCase, toDisplayName, coinType} from './helpers/case-conversions';
+import { toCamelCase, coinType} from './helpers/case-conversions';
+import { toDisplayName} from './helpers/coinData';
 import Card, { CardContent, CardHeader } from 'material-ui/Card';
 import Tooltip from 'material-ui/Tooltip';
 import Typography from 'material-ui/Typography';
@@ -62,22 +63,11 @@ class Exchanges extends Component {
     }
   }
 
-  sortExchange(a, b){
-          if(a.prices.length === b.prices.length) {
-              return 0;
-          }
-          else if(a.prices.length < b.prices.length) {
-              return -1;
-          } else {
-              return 1;
-          }
-      }
-
-
   render() {
     const { classes } = this.props;
     if(this.props.dataFromApp){
       // const api = this.props.dataFromApp.sort(this.sortExchange);
+      // ****** Sort Exchange is moved to case-conversion file******
       var cards = this.props.dataFromApp.map((cd)=>{
         return <Grid item xs={12} sm={6} md={3} lg={3} key={cd.name}>
                   <Card>
@@ -107,16 +97,17 @@ class Exchanges extends Component {
                       </div>
                     </div>
 
-                    {cd.prices.map((p)=>{
-                      return <div key={p.name}>
-                      <div className={classes.c_container} >
-                      <div>
-                        
+                        {
+                          cd.prices.map((p)=>{
+                       return <div key={p.name}>
+                                <div className={classes.c_container} >
+                              <div>
                         <span>
-                          <Tooltip id="tooltip-right" title={toDisplayName(p.name)}  placement="right" disableTriggerTouch>
+                          <Tooltip id="tooltip-right" title={toDisplayName(p.name, p.rank)} placement="right" disableTriggerTouch>
                             <span>{coinType(p.name)}</span>
                           </Tooltip>                          
                         </span>
+                      {/*<span>{p.rank}</span>*/}
                       </div>
                       <div className={classes.prices}>
                         <Typography component="p">
@@ -136,14 +127,18 @@ class Exchanges extends Component {
             </Grid>
       });
     }
-    else{
+
+
+    
+    else {
       cards = <div className={classes.loading}>
-        <SyncLoader
-          color={'#2196F3'} 
-          loading={this.state.loading} 
-        />
-      </div>
+                <SyncLoader
+                  color={'#2196F3'} 
+                  loading={this.state.loading} 
+                />
+              </div>
     }
+
         return (
           <div style={{ padding: 10 }} spacing={0}>
           <Grid container spacing={24}>
