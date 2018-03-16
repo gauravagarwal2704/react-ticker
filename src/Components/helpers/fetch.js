@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const coinRanks = {
     fetchRanks:()=>{
-      return axios.get('https://files.coinmarketcap.com/generated/search/quick_search.json')
+      return axios.get('https://s2.coinmarketcap.com/generated/search/quick_search.json')
       .then(res =>{
         // console.log('ranks', res.data);
         return res.data;
